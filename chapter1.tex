@@ -79,9 +79,127 @@ The reverse is true for when the electrons are the colder species.
 
 \section*{Problem 1-6}
 \label{sec:1-6}
+Poisson's equation for this situation is given by
+\begin{equation}
+	\epsilon_0\dfrac{d^2\phi}{dx^2} = -nq.
+\end{equation}
+Integration twice over the domain yields an equation for \(\phi \) given by
+\begin{equation}
+	\phi = -\dfrac{nq}{2\epsilon_0}x^2 + c_1x + c_2.
+\end{equation}
+By evaluating the potential at the parallel plates, where \(\phi=0\) we determine \(c_1\) and \(c_2\) to be
+\begin{equation}
+	\phi(\pm d) = -\dfrac{nq}{2\epsilon_0}d^2 \pm c_1d + c_2 = 0 \implies
+	c_1 = 0, \quad c_2 = \dfrac{nq}{2\epsilon_0}d^2.
+\end{equation}
+We can therefore say that the potential distribution between the plates is given by
+\begin{equation}
+	\phi = \dfrac{nq}{2\epsilon_0}\left(d^2 - x^2\right)
+\end{equation}
 
+The average kinetic energy for a particle between these parallel plates is given by \(E_\text{av} = \dfrac{1}{2}k_BT\), while the electric energy required to move a particle of charge \(q\) from a plate to the midplane is given by
+\begin{equation}
+	E_\text{e} = q\left(\phi_2 - \phi_1\right) = \dfrac{nq^2}{2\epsilon_0}d^2.
+\end{equation}
+By setting the two energies equal to one another and solving for \(d\) we can determine for which lengths the energy required to transport the particle is greater than the average kinetic energy of the particles
+\begin{equation}
+	\dfrac{1}{2}k_BT = \dfrac{nq^2}{2\epsilon_0}d^2 \implies d = \sqrt{\dfrac{\epsilon_0k_BT}{eq^2}} \equiv \lambda_D
+\end{equation}
+Which we see is precisely the Debye length, we can therefore say that for two infinite parallel plates the Debye length will be equal to the distance that the average kinetic energy of the particles can carry them. 
 
+\section*{Problem 1-7}
+\label{sec:1-7}
+\begin{itemize}
+	\item[(a)] \(\lambda_D = 10^{-4}m \), \(N_D = 4.8\times10^4 \)
+	\item[(b)] \(\lambda_D = 2.3\times10^{-3}m \), \(N_D = 5.4\times10^{4}\)
+	\item[(c)] \(\lambda_D = 6.6\times10^{-7}m \), \(N_D = 1.2\times10^5\)
+\end{itemize}
 
+\section*{Problem 1-8}
+\label{sec:1-8}
+The number of particles in a laser fusion pellet is given approximately by
+\begin{align}
+	N_D =& \dfrac{4\pi}{3}n \left(\lambda_D\right)^{3}\\
+	=& \dfrac{4\pi}{3}n \left(\dfrac{\epsilon_0k_BT}{ne^2}\right)^{3}\\
+	=& \dfrac{4\pi}{3} 10^{33}m^{-3} \left(1.542\times 10^{-11}m\right)^3\\
+	=& 15.385 \\
+	\approx& 15.
+\end{align}
+Therefore, there are approximately 15 particles in the Debye sphere of a the core of a DT pellet in the context of laser fusion.
 
+\section*{Problem 1-9}
+\label{sec:1-9}
+The Debye length for a distant galaxy with a cloud of protons and antiprotons, each with a density of \(n = 10^{-6}\) and a temperature of \(T=100K\) is given by
+\begin{equation}
+	\lambda_D = \sqrt{\dfrac{\epsilon_0k_BT}{2ne^2}} = 0.4879m.
+\end{equation}
+We have taken the density to be the sum of the densities of protons and antiprotons. Since a single unit of volume will have an equal density of each.
 
+\section*{Problem 1-10}
+\label{sec:1-10}
+We begin by assuming spherical symmetry and noting that Poisson's equation for this situation is given by
+\begin{equation}
+	\epsilon_0 \nabla^2 \phi = \rho(r) = \begin{cases} 
+	0 & r < a \\
+	-e\left(n_i-n_e\right) & r \geq a
+	\end{cases}.
+\end{equation}
+Since we are assuming the electrons are Maxwellian and the ions are stationary in the time frame of the experiment we can rewrite this equation as
+\begin{equation}
+	\dfrac{\epsilon_0}{r^2} \dfrac{\partial}{\partial r} \left(r^2\pp{\phi}{r}\right)  = \begin{cases} 
+	0 & r < a \\
+	en_\infty\exp{\left(\dfrac{e\phi}{k_BT_e}-1\right)} & r \geq a
+	\end{cases}.
+\end{equation}
 
+We first consider the simpler case, where \(r < a\). Here we may simply integrate our differential equation twice to obtain
+\begin{align*}
+	\dfrac{\epsilon_0}{r^2} \dfrac{\partial}{\partial r} \left(r^2\pp{\phi}{r}\right) =& 0 \\
+	r^2\pp{\phi}{r} =& 0 \\
+	\int \pp{\phi}{r} dr =& C_1\int \dfrac{1}{r^2}dr \\ 
+	\phi =& C_1 \dfrac{-1}{r} + C_2
+\end{align*}
+Applying boundary conditions yields
+\begin{equation}
+	\phi(0) \neq \infty \implies C_1 = 0
+\end{equation}
+\begin{equation}
+	\phi(a) = \phi_0 \implies C_2 = \phi_0.
+\end{equation}
+
+To derive an expression for the potential when \(r \geq a\) we must solve the ordinary differential equation
+\begin{equation}
+	\dfrac{\epsilon_0}{r^2} \dfrac{\partial}{\partial r} \left(r^2\pp{\phi}{r}\right)  = 
+	en_\infty\exp{\left(\dfrac{e\phi}{k_BT_e}-1\right)} \approx \dfrac{e^2n_\infty}{k_BT_e}\phi,
+\end{equation}
+\begin{equation}
+\dfrac{\partial^2 \phi}{\partial r^2} +  \dfrac{2}{r}\pp{\phi}{r} \approx \dfrac{e^2n_\infty}{\epsilon_0k_BT_e}\phi,
+\end{equation}
+where we have Taylor expanded the term on the right side of the equation. We assume a solution of the form
+\begin{align*}
+	\phi =& A\dfrac{e^{-kr}}{r} \\
+	\pp{\phi}{r} =& -A\dfrac{kr + 1}{r^2}e^{-kr} \\
+	\dfrac{\partial^2\phi}{\partial r^2} =& A\dfrac{k^2r^2 + 2kr + 2}{r^3}.
+\end{align*}
+Plugging the above into our equation, and dividing by our exponential term yields
+\begin{equation}
+	k^2 = \dfrac{e^2n_\infty}{k_BT_e} \implies k = \sqrt{\dfrac{e^2n_\infty}{k_BT_e}} = \dfrac{1}{\lambda_D}.
+\end{equation}
+Finally, we apply our boundary conditions to obtain
+\begin{equation}
+	\phi(a) = \phi_0 \implies A = a\phi_0e^{a/\lambda_D},
+\end{equation}
+and our final expression for the potential of a spherical conductor of radius \(a\) immersed in a plasma and charged to a potential \(\lambda_D \) is given by
+\begin{equation}
+	\phi = \begin{cases}
+	\phi_0 & r < a \\
+	a\phi_0e^{a/\lambda_D}\dfrac{1}{r}e^{-r/\lambda_D} & r \geq a
+	\end{cases}.
+\end{equation}
+
+\section*{Problem 1-11}
+\label{sec:1-11}
+We may estimate the maximum thickness of an \(n\)-channel MOSFET to be 
+\begin{equation}
+	10\lambda = 690(\dfrac{T}{n})^{\dfrac{1}{2}} = 1.18\times10^{-7}m
+\end{equation}
