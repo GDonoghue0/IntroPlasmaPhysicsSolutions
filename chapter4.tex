@@ -319,9 +319,7 @@ Plugging this value into our original equation, we obtain
 \begin{equation*}
 	\left.\dfrac{c^2}{v^2_\phi}\right|_{\omega = \frac{1}{2}\omega_c} = 1 - \dfrac{4\omega_p^2/\omega_c^2}{1 - 2} = 1 + \dfrac{4\omega_p^2}{\omega_c^2} > 1.
 \end{equation*}
-Therefore, the maximum phase velocity of the whistler mode occurs at \(\omega = \frac{1}{2}\omega_c\) and is less than the speed of light. 
-
-WHISTLER MODE IS LOW FREQ REGION
+Therefore, the maximum phase velocity of the low frequency whistler mode occurs at \(\omega = \frac{1}{2}\omega_c\) and is less than the speed of light. 
 
 \section*{Problem 4-20 (47)}
 \label{sec:4-20}
@@ -377,31 +375,79 @@ In either case the dispersion relation is
 \end{equation*}
 This equation --- unlike equation [4-104] --- has a single solution when \(k=0\) given by \(\omega = \sqrt{\omega_c^2 + 2\omega_p^2} \). Therefore the positronium plasma will not experience any Faraday rotation introduced by the multiple cutoff frequencies.
 
-\section*{Problem 4-22 (??)}
+\section*{Problem 4-22 (49)}
 \label{sec:4-22}
-The angular wavenumber for each of the R- and L- waves will be given by
+The angular wavenumber for each of the R- and L-waves will be given by
 \begin{equation*}
-	k_{R,L} = k_0
+	k_{R,L} = \dfrac{\omega}{c} \left(1 - \dfrac{\omega_p^2/\omega^2}{1 \pm \omega_c/\omega} \right)^{\frac{1}{2}}.
 \end{equation*}
+We will assume \(\omega_c \ll \omega \), and expand our square root to obtain
+\begin{equation*}
+	k_{R,L} = \dfrac{\omega}{c} \left(1 - \dfrac{1}{2}\dfrac{\omega_p^2/\omega^2}{1 \pm \omega_c/\omega} \right).
+\end{equation*}
+The phase difference between the R and L waves will be given by
+\begin{equation*}
+	\int_0^L (k_L - k_R)dx = L(k_L-k_R) = \pi,
+\end{equation*}
+where we have taken the phase difference to be twice the angle that the plane of polarization has rotated. Some algebra yields
+\begin{equation*}
+	\pi = L(k_L-k_R) = \dfrac{L}{2}\dfrac{\omega}{c}\left(\dfrac{1}{1-\omega_c/\omega} - \dfrac{1}{1+\omega_c/\omega}\right)\dfrac{\omega^2_p}{\omega^2} = L\dfrac{\omega}{c} \dfrac{\omega^2_p\omega_c}{\omega}\dfrac{1}{\omega^2 - \omega_c^2}.
+\end{equation*}
+Since we are interested in determining the density of the plasma, we rearrange to obtain an expression for \(\omega^2_p \)
+\begin{equation*}
+	\omega^2_p = \dfrac{\pi}{L}\dfrac{c}{\omega_c}\left(\omega^2 - \omega^2_c \right).
+\end{equation*}
+Using this equation with the fact that \(\omega^2_p = \frac{n_0e^2}{\epsilon_0m} \), \(\omega = 2\pi\frac{c}{\lambda} = 1.76 \times 10^{10} \)Hz, and \(\omega_c = \frac{qB}{m} = 2.36\times10^{11} \)Hz to obtain
+\begin{equation*}
+	n = 9.3 \times 10^{17}\text{m}^{-3}
+\end{equation*}
+Which is the density of the plasma determined via measurement of the rotation of the plane of polarization. 
 
-
-\section*{Problem 4-23 (??)}
+\section*{Problem 4-23 (50)}
 \label{sec:4-23}
-Since we have \(\omega^2 \gg \omega_p^2,\omega^2_c \) we can expand the square roots for \(k_{R,L} \) such that
+Since we have \(\omega^2 \gg \omega_p^2,\omega^2_c \) we can expand the square roots for \(k_{R,L} \) as in the previous problem to obtain
 \begin{equation*}
-	k_R = \dfrac{\omega}{c}\left(1 - \dfrac{\omega_p^2/\omega^2}{1 - \omega_c/\omega} \right)^{1/2} \approx
+	k_{R,L} = \dfrac{\omega}{c}\left(1 - \dfrac{\omega_p^2/\omega^2}{1 \pm \omega_c/\omega} \right)^{1/2} \approx \dfrac{\omega}{c} \left(1 - \dfrac{1}{2}\dfrac{\omega_p^2/\omega^2}{1 \pm \omega_c/\omega} \right).
 \end{equation*}
+Again, we take the difference of the phase to be twice the Faraday rotation angle, the difference being given by
+\begin{equation*}
+	k_L - k_R = \dfrac{\omega}{c}\left[\dfrac{1}{2}\dfrac{\omega_p^2/\omega^2}{1 - \omega_c/\omega}\dfrac{1 + \omega_c/\omega}{1 + \omega_c/\omega} - \dfrac{1}{2}\dfrac{\omega_p^2/\omega^2}{1 - \omega_c/\omega}\dfrac{1 - \omega_c/\omega}{1 - \omega_c/\omega}  \right] = \dfrac{\omega}{2c}\left[\dfrac{2\omega_p^2\omega_c/\omega^3}{1 - \omega_c^2/\omega^2} \right].
+\end{equation*}
+Since we are assuming \(\omega^2 \gg \omega_c^2  \) we will approximate our denominator to obtain
+\begin{equation*}
+	k_L-k_R = \dfrac{\omega^2_p\omega_c}{c\omega^2} = \dfrac{1}{c\omega^2}\dfrac{n_0e^2}{m\epsilon_0}\dfrac{eB}{m}.
+\end{equation*}
+Using this equation, along with the fact that \(\frac{1}{\omega^2} = \left(\frac{\lambda_0}{2\pi c}\right)^2 \) and 
+\begin{equation*}
+	\int_0^L (k_L - k_R)dx = 2\theta,
+\end{equation*}
+to obtain
+\begin{equation*}
+	\theta = \dfrac{1}{2}\left(k_L - k_R\right) = \dfrac{1}{2}\dfrac{\lambda_0^2}{4\pi^2c^3}\dfrac{e^2}{m\epsilon_0}\dfrac{e}{m}B(z)n(z).
+\end{equation*}
+Evaluating the constants in this equation and converting to degrees yields
+\begin{equation*}
+	\theta = 1.5\times10^{-11}\lambda_0^2\int_{0}^{L}B(z)n(z)dz,
+\end{equation*}
+which is exactly the expression for the Faraday rotation we have sought. 
 
-\section*{Problem 4-25 (49)}
+\section*{Problem 4-24}
+\label{sec:4-24}
+Skip
+
+\section*{Problem 4-25 (51)}
 \label{sec:4-25}
 The dispersion relationship for X-waves is given by equation [4-104], while the specific cutoff frequency relation is given by equation [4-107]
 \begin{equation*}
 	\omega^2 \pm \omega\omega_c = \omega_p^2 = \dfrac{n_0e^2}{m\epsilon_0}
 \end{equation*}
+Rearranging this yields
+\begin{equation*}
+	n_{cx} = \dfrac{m\omega}{\epsilon_0e^2}(\omega \pm \omega_c),
+\end{equation*}
+the \(+\) sign corresponds to the higher density L wave cutoff while the \(-\) sign corresponds to the lower density R wave cutoff. If we were to take a \(v^2_\phi/\cal^2 \) vs. \(\omega \) diagram like the one shown in Figure [4-36] in the text, we can say that by using extraordinary waves with \(\omega < \omega_c \) one can avoid the cutoff range between \(\omega_h \) and \(\omega_R \).
 
-NEED TO COME BACK TO THESE LAST FEW PROBLEMS
-
-\section*{Problem 4-26}
+\section*{Problem 4-26 (52)}
 \label{sec:4-26}
 The Alfv\'en velocity is given by
 \begin{equation*}
@@ -409,18 +455,47 @@ The Alfv\'en velocity is given by
 \end{equation*}
 Since the Alfv\'en velocity represents a phase velocity is can be larger than \(c\), but since no information is propagating this does not imply that anything is travelling through space faster then light. 
 
-\section*{Problem 4-27}
+\section*{Problem 4-27 (53)}
 \label{sec:4-27}
 Since we have \(\rho = nM \), we can say that our Alfv\'en velocity is 
 \begin{equation*}
 v_A = \dfrac{B}{\sqrt{\mu_0nM_H}} = 2.183 \times 10^{4}\text{m/s}.
 \end{equation*}
 
-\section*{Problem 4-28}
+\section*{Problem 4-28 (54)}
 \label{sec:4-28}
-This one is easy but requires a diagram. 
+In order to determine the region of the CMA diagram were the experiment is located we must determine \(\dfrac{\omega_c}{\omega} \) and \(\dfrac{\omega_p^2}{\omega^2} \). We have 
+\begin{equation*}
+	\omega_p = 1.79 \times 10^{9}\text{Hz}, \quad \omega_p = 1.76 \times 10^{9}\text{Hz}, \quad \omega = 1.00 \times 10^{9}\text{Hz}.
+\end{equation*}
+Since this gives both \(\dfrac{\omega_c}{\omega} > 1 \) and \(\dfrac{\omega_p^2}{\omega^2} > 1\), we must determine whether we are operarting above or below the L-cutoff line. To do so, we take 
+\begin{equation*}
+	\omega_L  =\frac{1}{2}\left[-\omega_c + \left(\omega_c^2 + 4\omega_p^2\right)^{1/2} \right] = 1.08 \times 10^{9}\text{Hz}.
+\end{equation*}
+Since we have \(\omega_L > \omega \) we can place our experiment on the following CMA diagram, marked by \(\ast \).
+\\
+\begin{figure}[H]
+\centering	
+	\begin{tikzpicture}
+		\draw (0,0) -- (8,0);
+		\draw (0,0) -- (0,8);
+		\draw (3,0) -- (3,8);
+		\draw (0,3) -- (8,3);
+		\draw (0,3) -- (3,0);
+		\draw (0,3) to[out = 350, in = 100] (3,0);
+		\node at (-0.5,5) {\(\dfrac{\omega_c}{\omega}\)};
+		\node at (5,-0.5) {\(\dfrac{\omega_p^2}{\omega^2}\)};
+		\node at (-0.5,3) {\(1\)};
+		\node at (3,-0.5) {\(1\)};
+		\draw (3,0) to[out = 30, in = 270] (5,3);
+		\draw (5,3) to[out = 90, in = 330] (3,7);
+		\node at (6,6) [circle,draw,inner sep=0pt,minimum width=0.75cm] {\(\ast \)};
+	\end{tikzpicture}
+	\caption{CMA Diagram, with mark for experiment}
+\end{figure}
+Based on this, the only electromagnetic waves that will propagate though this plasma are the whistler modes. 
 
-\section*{Problem 4-29}
+\section*{Problem 4-29 (55)}
 \label{sec:4-29}
 Having a standing wave with maximum amplitude at the mid-plane and nodes at the edges of the plasma column requires a wavelength of \(\lambda = 2L \), where \(L\) is the radius of the cylindrical plasma column. Using the definition of the angular wavenumber, Alfv\'en velocity, and ion cyclotron frequency, respectively, we obtain
 \begin{equation*}
@@ -431,7 +506,7 @@ If the Q-machine were used instead we would have
 	L =  \dfrac{\pi B M}{0.1eB\sqrt{\mu_0n'M'}} = 82\text{m}.
 \end{equation*}
 
-\section*{Problem 4-30}
+\section*{Problem 4-30 (56)}
 \label{sec:4-30}
 Ignoring the interstellar magnetic field, our dispersion relation is given by equation [4-85]
 \begin{equation*}
@@ -453,3 +528,308 @@ In order to determine the distance of the pulsar, we have
 \begin{equation*}
 	x = \dfrac{cf^3}{f^2_p}\left(-\dd{f}{t} \right)^{-1} = 63\text{ parsecs}.
 \end{equation*}
+
+
+\section*{Problem 4-31}
+\label{sec:4-31}
+Looks doable, but quite long. Maybe come back
+
+\section*{Problem 4-32 (57)}
+\label{sec:4-32}
+In order to show that the time-averaged electron kinetic energy per unit volume is equal to the electric field energy density we will first note the definition of the time-averaged electron kinetic energy per unit volume to be
+\begin{equation*}
+	\EE = n_0\frac{m}{2}\left<v_e^2 \right>.
+\end{equation*}
+Using the fact that based on our equation of motion we have
+\begin{equation*}
+	v_e = \dfrac{e}{im\omega}E \implies \left<v_e^2\right> = \dfrac{e^2}{m^2\omega^2}\left<E^2\right>.
+\end{equation*}
+Substituting this into our first equation we obtain
+\begin{equation*}
+	\EE = n_0\frac{m}{2} \dfrac{e^2}{m^2\omega^2}\left<E^2\right> = \epsilon_0\dfrac{\omega^2_p}{2\omega^2}\left<E^2\right>.
+\end{equation*}
+However since for our Langmuir plasma we have \(\omega_p = \omega \), we can therefore say that 
+\begin{equation*}
+	\EE = \dfrac{\epsilon_0}{2}\left<E^2\right>,
+\end{equation*}
+as expected.
+
+
+\section*{Problem 4-33 (58)}
+\label{sec:4-33}
+For Alfv\'en waves if we assume \(\Omega^2_c \gg \omega^2 \) then we can say that 
+\begin{equation*}
+	v_i \approx -\dfrac{E_1}{B_0}, \implies \EE = \dfrac{1}{2}Mn_0\dfrac{\left<E_1^2\right>}{B_0}.
+\end{equation*}
+Furthermore by Faraday's law we have \(E_1 = \dfrac{\omega}{k}B_1 \), therefore
+\begin{equation*}
+	\EE = \dfrac{Mn_0}{2B_0}\dfrac{\omega^2}{k^2}\left<B^2_1 \right>.
+\end{equation*}
+Finally, we note that for an Alfv\'en wave we have \(\dfrac{\omega^2}{k^2} = \dfrac{B_0}{\mu_0n_0M} \), which implies that
+\begin{equation*}
+	\EE = \dfrac{\left<B_1^2\right>}{2\mu_0}.
+\end{equation*}
+
+\section*{Problem 4-34}
+\label{sec:4-34}
+Since we have cutoff for our L-waves occuring at \(\omega = \omega_L < \omega_p \) \\
+MAYBE COME BACK TO THIS ONE.
+
+\section*{Problem 4-35}
+\label{sec:4-35}
+MIGHT NOT BE ABLE TO DO THIS ONE\\
+NEXT PROBLEM MAY HELP HERE
+
+\section*{Problem 4-36 (59)}
+\label{sec:4-36}
+By including the \(\nabla p \) term, our linearized equations of motion for both species are updated to become
+\begin{equation*}
+	-i\omega m n_0 \bm{v}_1 = \pm e \left(\bm{E} + \bm{v}_1 \times \bm{B}_0 \right) - \gamma k_BT\bm{k}n_1.
+\end{equation*}
+Multiplying both sides of our equation of motion with \(\bm{k} \cdot  \) yields
+\begin{equation*}
+-i\omega m n_0 \bm{k} \cdot\bm{v}_1 = \pm e \left(\bm{k} \cdot\bm{E} + \bm{k} \cdot\bm{v}_1 \times \bm{B}_0 \right) - \gamma k_BTk^2n_1.
+\end{equation*}
+However, for transverse waves we have \(\bm{k} \cdot \bm{E} = 0 \); we also have \(\bm{k} \cdot \left(\bm{v}_1 \times \bm{B}_0\right) = \bm{v}_1 \cdot \left(\bm{k} \times \bm{B}_0\right) = 0 \), by the problem specification. Our equation of motion therefore becomes 
+\begin{equation*}
+	\omega m n_0 i \left(\bm{k} \cdot \bm{v}_1 \right) = -\gamma k_BTk^2n_1.
+\end{equation*}
+We can use the continuity equation,
+\begin{equation*}
+	n_0 i \left(\bm{k} \cdot \bm{v}_1 \right) = i\omega n_1,
+\end{equation*}
+to obtain
+\begin{equation*}
+	i\omega^2m n_1 = -\gamma k_BTk^2n_1.
+\end{equation*}
+We see that the dependence on \(n_1\) (and therefore \(\nabla p \)) vanishes, and transverse waves will be unaffected by the \(\nabla p \) term.
+
+\section*{Problem 4-37 (60)}
+\label{sec:4-37}
+The linearized equation of motion for the electron is now given by
+\begin{equation*}
+	i\omega m \bm{v}_1 = -e\bm{E}_1 - m \bm{v}_1\nu.
+\end{equation*}
+Solving for \(\bm{v}_1 \) and subsitiuting this into our equation for \(\bm{j}_1 \) yields 
+\begin{equation*}
+	\bm{v}_1 = \dfrac{-e\bm{E}_1}{i\omega m + m\nu} \implies \bm{j}_1 = -\dfrac{n_0e^2\bm{E}_1}{im(\omega+i\nu)}.
+\end{equation*}
+Using this expression for \(\bm{j}_1 \) in our transverse wave equation we obtain
+\begin{equation*}
+	\left(\omega^2 - c^2k^2 \right)\bm{E}_1 = \dfrac{\omega}{\omega + i\nu}\omega_p^2\bm{E}_1.
+\end{equation*}
+Dividing through by \(\omega^2 \) yields the expected dispersion relation
+\begin{equation*}
+	\dfrac{c^2k^2}{\omega^2} = 1 - \dfrac{\omega^2_p}{\omega(\omega + i\nu)}.
+\end{equation*}
+
+(b) If we assume \(\nu/\omega \ll 1 \) then we can say that 
+\begin{equation*}
+	\left(1 + i\dfrac{\nu}{\omega} \right)^{-1} \approx 1 - i\dfrac{\nu}{\omega},
+\end{equation*}
+and therefore update our dispersion relation to 
+\begin{equation*}
+	c^2k^2 \approx \omega^2 - \omega_p^2 + i\nu\dfrac{\omega^2_p}{\omega}.
+\end{equation*}
+In order to determine our \(\gamma \equiv -\text{Im}(\omega) \), we will assume \(\omega = x + iy \), substituting this into our dispersion relation yields
+\begin{equation*}
+	c^2k^2 + \omega_p^2 = x^2 - y^2 + 2xyi + i\dfrac{\omega^2_p\nu}{x+iy} = x^2 - y^2 + \dfrac{\omega_p^2\nu}{x^2+y^2} + i\left(2xy + \dfrac{\omega_p^2\nu x}{x^2+y^2} \right).
+\end{equation*}
+Since the right hand side of our equation is real, we must have the imaginary portion of our left hand side being zero, this is to say
+\begin{equation*}
+	2xy =- \dfrac{\omega_p^2\nu x}{x^2+y^2} \implies  \text{Im}(\omega) \equiv y = - \dfrac{\omega_p^2\nu}{2|\omega|^2}.
+\end{equation*}
+This is the damping rate relation that is valid when \(\nu/\omega \ll 1 \).\\
+
+Lastly, by again applying the approximation from part (b), we obtain
+\begin{equation*}
+	k^2 \approx \dfrac{\omega^2 - \omega_p^2}{c^2} + i\nu\dfrac{\omega^2_p}{\omega c^2}.
+\end{equation*}
+We will follow the same procedure as part (b) and assume \(k = x + iy \), and \(k^2 = x^2 - y^2 + 2xyi \), this yields 
+\begin{equation*}
+	x^2 - y^2 + 2xyi \approx \dfrac{\omega^2 - \omega^2_p}{c^2} + i\nu\dfrac{\omega^2_p}{\omega c^2},
+\end{equation*}
+each part of which is an equation that can be used to solve for one of the two unknowns (\(x\) and \(y\)). We have
+\begin{equation*}
+	x^2 = \dfrac{\omega^2 - \omega^2_p}{c^2} + y^2, \quad \& \quad x^2y^2 = \left(\dfrac{\omega^2_p\nu}{2\omega c^2}\right)^2.
+\end{equation*}
+Combining these two equations yields the quartic equation
+\begin{equation*}
+	\dfrac{\omega^2 - \omega^2_p}{c^2}y^2 + y^4 = \left(\dfrac{\omega^2_p\nu}{2\omega c^2}\right)^2,
+\end{equation*}
+substituting \(z = y^2\), yields a quadratic equation, which can be solved for \(y\). Determining this solution using Maple gives
+\begin{equation*}
+	\delta = \left(\text{Im}(k)\right)^{-1} = \dfrac{2c}{\nu}\dfrac{\omega^2}{\omega_p^2}\left(1 - \dfrac{\omega^2_p}{\omega^2}\right)^{1/2}.
+\end{equation*}
+
+
+\section*{Problem 4-38 (61)}
+\label{sec:4-38}
+As in the previous problem each electron will have collision and electric field forces acting upon it, yield a linearized equation of motion
+\begin{equation*}
+i\omega m \bm{v}_1 = -e\bm{E}_1 - m \bm{v}_1\nu,
+\end{equation*}
+where \(\nu = n_n\overline{\sigma v} =100\text{s}^{-1}\). Analogously to the previous question, our dispersion relation is given by
+\begin{equation*}
+	k^2 = \dfrac{\omega^2 - \omega^2_p}{c^2} + i\dfrac{\omega^2_p\nu}{\omega^2_c}.
+\end{equation*}
+The electric field for a microwave plasma can be described by the equation
+\begin{equation*}
+	E = E_0\exp\{i\left(\text{Re}(k)r - \omega t \right) \}\exp\{-\text{Im}(k)r \}.
+\end{equation*}
+Again, like the previous question, the term \(\exp\{-\text{Im}(k)r \} \) represents the attenuation as the wave travells through the ionosphere. In order to determine the amount of attenuation, we take the ratio of magnitudes of the wave before and after travelling 100km 
+\begin{equation*}
+	\dfrac{E(100\text{km})}{E(0\text{km})} = \exp\{-2\text{Im}(k)(100\text{km}) \}.
+\end{equation*}
+We note that 
+\begin{equation*}
+	\omega^2_p = 3.17\times 10^{14}\text{s}^{-1}, \quad \text{Im}(k) = \dfrac{\nu}{2c}\dfrac{\omega^2_p}{\omega^2}\left(1 - \omega^2_p/\omega^2\right)^{-1/2} = 1.34\times 10^{12}\text{m}^{-1}.
+\end{equation*}
+This yields 
+\begin{equation*}
+	\dfrac{E(100\text{km})}{E(0\text{km})} = \exp(-2.70\times 10^{-7}) = 0.99999
+\end{equation*}
+We therefore say that almost no beam power is lost to heating up the ionosphere. 
+
+
+\section*{Problem 4-39}
+\label{sec:4-39}
+Too much algebra
+
+\section*{Problem 4-40 (62)}
+\label{sec:4-40}
+In the first situation, when \(\bm{E} \) is in the \(\hat{z}\)-direction, we have \(\bm{E}_1\parallel\bm{B}_0 \). This is an ordinary wave, the dispersion relation for which is given by
+\begin{equation*}
+	\omega^2 = \omega^2_p + c^2k^2 \implies k^2 = \left(\dfrac{2\pi}{c\lambda_0} \right)^2 - \dfrac{n_0e^2}{m\epsilon_0c^2} \implies k = 543.7\text{m}^{-1}.
+\end{equation*}
+We can thererfore say that the number of wavelengths in the waveguide is
+\begin{equation*}
+	N = \dfrac{d}{\lambda} = \dfrac{dk}{2\pi} = 8.6
+\end{equation*}
+
+In the second situation we have \(\bm{E}_1\perp\bm{B}_0 \) --- an extraordinary wave --- the dispersion relation for which is given by
+\begin{equation*}
+	\dfrac{c^2k^2}{\omega^2} = 1 - \dfrac{\omega^2_p}{\omega^2}\dfrac{\omega^2 - \omega^2_p}{\omega^2 - \omega^2_p - \omega^2_c}.
+\end{equation*}
+Where \(\omega\) and \(\omega_p^2 \), are the same as the previous situation, solving for \(k\) gives, \(k = 832.2\text{m}^{-1} \). Based on this we can say that there are
+\begin{equation*}
+	N =\dfrac{d}{\lambda} = 13.2
+\end{equation*}
+wavelengths in the waveguide.
+
+\section*{Problem 4-41 (63)}
+\label{sec:4-41}
+Since we have no electric field or magnetic field, and no velocity in our equilibrium state, we have 
+\begin{equation*}
+	\bm{B}_0 = 0, \bm{E}_0 = 0, T_e = 0.
+\end{equation*}
+The relevant Maxwell equations yield, once more, euqation [4-80]
+\begin{equation*}
+	(\omega^2 - c^2k^2 )\bm{E}_1 = -i\omega\bm{j}_1/\epsilon_0.
+\end{equation*}
+We must now update our equation for \(\bm{j}_1 \) to account for our non-hydrogen ions. To do so, we take
+\begin{equation*}
+	\bm{j}_1 = n_{0+}Ze\bm{v}_{0+} - n_{0-}e\bm{v}_{0-} \implies \bm{j}_1 = Zn_{0+}e\left(\bm{v}_{0+} - \bm{v}_{0-}\right)
+\end{equation*}
+Our linearized equations of velocity are
+\begin{equation*}
+	iM_+\omega\bm{v}_{0+} = -Ze\bm{E}_1,
+\end{equation*}
+\begin{equation*}
+	iM_-\omega\bm{v}_{0-} = e\bm{E}_1.
+\end{equation*}
+Using these along with equation [4-80] and our expression for the current density, we obtain
+\begin{equation*}
+	\bm{j}_1 = -Zn_{0+}e\left(\dfrac{Ze\bm{E}_1}{iM_+\omega} + \dfrac{e\bm{E}_1}{iM_-\omega}\right) = \dfrac{Zn_{0+}e^2}{i\omega}\left(\dfrac{Z}{M_+} + \dfrac{1}{M_-}\right)\bm{E}_1.
+\end{equation*}
+This yields the following dispersion relation:
+\begin{equation*}
+	\omega^2 - c^2k^2 = \dfrac{Z^2e^2n_{0+}}{M_+\epsilon_0} + \dfrac{e^2n_{0-}}{M_-\epsilon_0}.
+\end{equation*}
+
+\section*{Problem 4-42 (64)}
+\label{sec:4-42}
+The Boltzmann relation and plasma approximation state that, respectively, 
+\begin{equation*}
+	n_{e1} \approx n_0\dfrac{e\phi_1}{k_BT_e}, \quad Zn_{A1} + n_{H1} = n_{e1}.
+\end{equation*}
+For our problem, the linearized equations of motion are
+\begin{equation*}
+	-iM_A\omega\bm{v}_{A1} = Ze\left(-ik\phi_1\right),
+\end{equation*}
+\begin{equation*}
+-iM_H\omega\bm{v}_{H1} = e\left(-ik\phi_1\right).
+\end{equation*}
+While the continuity equations are
+\begin{equation*}
+	i\omega n_{A1} = n_{A}ikv_{A1},
+\end{equation*} 
+\begin{equation*}
+	i\omega n_{H1} = n_{H}ikv_{H1}.
+\end{equation*}
+Combining the equations of motion and continuity, along with out Boltzmann and plasma approximations we get 
+\begin{equation*}
+	\dfrac{\omega^2}{k^2} = \dfrac{k_BT_e}{n_0}\left(\dfrac{Z^2n_A}{M_A} + \dfrac{n_H}{M_H} \right).
+\end{equation*}
+The phase velocity is given by
+\begin{equation*}
+	v_\phi = \dfrac{\omega}{k} = \left(\dfrac{k_BT_e}{n_0}\left(\dfrac{Z^2n_A}{M_A} + \dfrac{n_H}{M_H} \right)\right)^{1/2}.
+\end{equation*}
+
+\section*{Problem 4-43 (65)}
+\label{sec:4-43}
+We wish to use the Poisson equation
+\begin{equation*}
+	\epsilon_0\nabla\cdot E_1 = n_{+1}e - Zn_{-1}e,
+\end{equation*}
+the continuity equations
+\begin{equation*}
+	n_{+1} = \dfrac{k}{\omega}n_0v_{+1},
+\end{equation*}
+\begin{equation*}
+n_{-1} = \dfrac{k}{\omega}n_0v_{-1},
+\end{equation*}
+and the equations of motion, which in the absence of collisions, magnetic fields, and thermal motions are 
+\begin{equation*}
+	v_{+1} = \dfrac{-eE_1}{i\omega M_+},
+\end{equation*}
+\begin{equation*}
+	v_{-1} = \dfrac{ZeE_1}{i\omega M_-},
+\end{equation*}
+to derive a dispersion relation for the plasma of antifermium nuclei at a remote part of the universe. Substituting our expressions for velocity into our continuity equations, then the resulting expressions for density into Poisson's equation we obtain
+\begin{equation*}
+	\epsilon_0(ik)\bm{E}_1 = \dfrac{k}{\omega}n_0\dfrac{-e^2\bm{E}_1}{i\omega M_+} - Z\dfrac{k}{\omega}n_0\dfrac{Ze^2\bm{E}_1}{i\omega M_-}.
+\end{equation*}
+Rearranging this we obtain
+\begin{equation*}
+	\omega^2 = \omega_{p+}^2 + \omega_{p-}^2.
+\end{equation*}
+Where we have defined the plasma frequency for the antifermium to be 
+\begin{equation*}
+	\omega^2_{p-} = \dfrac{Z^2n_0e^2}{M_-\epsilon_0},
+\end{equation*}
+and the positron plasma frequency to be 
+\begin{equation*}
+	\omega^2_{p+} = \dfrac{n_0e^2}{M_+\epsilon_0},
+\end{equation*}
+
+\section*{Problem 4-44 (66)}
+\label{sec:4-44}
+If we assume the signal is being cutoff from below, then the highest possible cutoff frequency is \(\omega = \omega_R \) which will satisfy
+\begin{equation*}
+	\omega^2 - \omega\omega_c - \omega^2_p = 0 \implies \dfrac{n_0e^2}{\epsilon_0m} = 4\pi^2f^2 - 2\pi f\dfrac{eB}{m}.
+\end{equation*}
+Solving for \(n_0\), we obtain
+\begin{equation*}
+	n = 2.8\times 10^{13}\text{m}^{-1},
+\end{equation*}
+which gives a lower limit to the plasma density in the Crab nebula.
+
+\section*{Problem 4-45 (67)}
+\label{sec:4-45}
+
+\section*{Problem 4-46 (68)}
+\label{sec:4-46}
+
+\section*{Problem 4-48 (69)}
+\label{sec:4-48}
