@@ -1,0 +1,455 @@
+\chapter*{Chapter Four}
+\label{ch:Four}
+
+\section*{Problem 4-1 (32)}
+\label{sec:4-1}
+The phase of \(\phi_1 \) relative to \(n_1\) is given by
+\begin{equation*}
+\delta = \text{atan}\left[\dfrac{\Im(\phi_1)}{\Re(\phi_1)} \right].
+\end{equation*}
+We can rearrange the given expression to solve for \(\phi_1 \) as
+\begin{equation*}
+	\phi_1 = \dfrac{k_BT_e}{e}\dfrac{n_1}{n_0}\dfrac{\omega + ia}{\omega_* + ia} \dfrac{\omega_* - ia}{\omega_*-ia}
+\end{equation*}
+\begin{equation*}
+	\phi_1 = \dfrac{k_BT_e}{e}\dfrac{n_1}{n_0}\dfrac{\omega\omega_* + a^2 + ia(\omega_* - \omega)}{\omega_*^2 + a^2}
+\end{equation*}
+Since we are assuming that \(n_1\) is real and all other symbols (except \(i\)) are positive constants we can say that
+\begin{equation*}
+	\delta = \text{atan}\left[\dfrac{\omega\omega_* + a^2}{a(\omega_*-\omega)} \right].
+\end{equation*}
+We can say that if \(\omega < \omega_* \) then we have \(\delta > 0 \). If we assume \(n_1\) to have a phase of 0 then \(\phi_1\) lags \(n_1\) in time and space.
+
+
+\section*{Problem 4-2 (33)}
+\label{sec:4-2}
+In order to include ion motions in our plasma frequency calculation, we introduce their equations of motion
+\begin{equation*}
+	Mn_i\left[\pp{v_i}{t} + (v_i \cdot \nabla)v_i \right] = en_iE,
+\end{equation*}
+\begin{equation*}
+	\pp{n_i}{t} + \nabla \cdot (n_iv_i)  = 0.
+\end{equation*}
+Having a uniform neutral plasma at rest implies
+\begin{equation*}
+	Mn_i\left[\pp{v_{i1}}{t} + (v_{i1} \cdot \nabla)v_{i1} \right] = en_{i1}E,
+\end{equation*}
+\begin{equation*}
+	\pp{n_{i1}}{t} + n_{i0}\nabla \cdot v_{i1}  = 0.
+\end{equation*}
+If we assume the above quantities oscillate sinusoidally, we can take \(\pp{}{t} = -i\omega\) and \(\nabla = ik\hat{x} \) and then update equations [4-21]-[4-23] to obtain
+\begin{align*}
+	ikE_1 =& \dfrac{1}{\epsilon_0}e(n_{i1} - n_{e1})\\
+	-i\omega m v_{e1} =& -eE_1 \\
+	-i\omega M v_{i1} =& eE_1 \\
+	-i\omega n_{e1} =& -ikn_0 v_{e1}\\
+	-i\omega n_{i1} =& -ikn_0 v_{i1}.
+\end{align*}
+Using these equations we can solve for \(n_{e1} \) and \(n_{i1}\)
+\begin{equation*}
+n_{e1} = \dfrac{k}{\omega}n_0\left(\dfrac{-ie}{m\omega} \right)E_1, \quad n_{i1} = \dfrac{k}{\omega}n_0\left(\dfrac{ie}{m\omega} \right)E_1.
+\end{equation*}
+Substituting the above into Poisson's equation yields
+\begin{equation*}
+	ikE_1 = \dfrac{1}{\epsilon_0}\dfrac{k}{\omega} n_0\dfrac{ie}{\omega}\left(\dfrac{1}{m} + \dfrac{1}{M}\right) = \dfrac{ikE_1}{\omega^2}\left(\Omega_p^2 + \omega_p^2 \right).
+\end{equation*}
+We see that since \(M \gg m\) our assumption of fixed ions is justifiable.
+
+\section*{Problem 4-3}
+\label{sec:4-3}
+Requires drawing, skip
+
+
+\section*{Problem 4-4 (34)}
+\label{sec:4-4}
+By manipulating our linearized equations of motion [4-21]--[4-23], we can obtain the expression
+\begin{equation*}
+	ikE_1 = \dfrac{ike^2n_0}{\epsilon_0m\omega^2}E_1,
+\end{equation*}
+which we can rearrange to obtain an expression in the form of \(\nabla \cdot \left(\epsilon E \right) = 0 \) as 
+\begin{equation*}
+	0 = ik\left(1 - \dfrac{e^2n_0}{\epsilon_0 m \omega^2} \right)E_1.
+\end{equation*}
+We can see here that an expression for high-frequency oscillations applicable to high-frequency is \(\epsilon = \left(1 - \dfrac{\omega_p^2}{\omega^2} \right) \)
+
+\section*{Problem 4-5 (35)}
+\label{sec:4-5}
+We know that for electron plasma waves with thermal motions included, we have
+\begin{equation*}
+	\omega^2 = \omega_p^2 + \dfrac{3}{2}k^2v_{th}^2 \implies (2\pi f)^2 = \dfrac{n_0 e^2}{\epsilon_0 m} + 3k^2\dfrac{k_BT_e}{m}.
+\end{equation*}
+Rearranging for \(k\) gives
+\begin{equation*}
+	k^2 = \dfrac{\left((2\pi f)^2 - \dfrac{n_0e^2}{\epsilon_0m} \right)}{3k_BT_e/m} = 3.05 \times 10^5.
+\end{equation*}
+Finally we may say that our wavelength is \(\lambda = \dfrac{2\pi}{k} = 1.14 \)cm.
+
+\section*{Problem 4-6 (36)}
+\label{sec:4-6}
+Our updated electron equation of motion becomes
+\begin{equation*}
+	mn_e\left[\pp{v_e}{t} + (v_e\cdot\nabla)v_e \right] = -en_eE - mn_e\nu v_e,
+\end{equation*}
+this corresponds to an updated equation [4-21] in the form of
+\begin{equation*}
+	-im\omega v_1 = -eE - m\nu v_1.
+\end{equation*}
+A useful re-expression of the above equation is
+\begin{equation*}
+	v_1 \left(1 + \dfrac{i\nu}{\omega} \right) = \dfrac{ieE_1}{m\omega}.
+\end{equation*}
+Given similarities with other problems, we will leave the rearrangement for \(\omega \) and simply state our dispersion relation as
+\begin{equation*}
+	\omega^2 + i\nu\omega = \omega_p^2.
+\end{equation*}
+
+If we take \(\omega = x + iy \) then our dispersion relation becomes
+\begin{equation*}
+	x^2 -y^2 + 2ixy + i\nu x - \nu y = \omega_p^2,
+\end{equation*}
+and we have \(Im(\omega) = -\nu/2\). Since \(\nu > 0 \) and \(E \propto \exp(-(ix-\nu/2)t) \), we say the wave is damped in time. 
+
+\section*{Problem 4-7 (37)}
+\label{sec:4-7}
+The equations of motion for this problem ([4-55, 4-56]) tell us that for \(\bm{E} = E\hat{x}, \bm{k} = k\hat{x}, \bm{B} = B\hat{z} \), the motion is described according to
+\begin{equation*}
+	-i\omega m v_x = -eE - ev_yB, \quad i\omega m v_y = ev_xB.
+\end{equation*}
+Taking the second equation we obtain an expression for \(v_x/v_y\) in terms of \(\omega/\omega_c \)
+\begin{equation*}
+	\dfrac{v_x}{v_y} = -i\dfrac{\omega m}{eB} = -i\dfrac{\omega}{\omega_c}.
+\end{equation*}
+From here, we note that by the definition of the upper hybrid frequency \(\omega_h = \omega > \omega_c \), and therefore \(v_x > v_y \). Since \(\bm{k} = k\hat{x}\) is in the \(x\)-direction, we can say that the orbit is elongated along the direction of \(\bm{k}\)
+
+\section*{Problem 4-8}
+\label{sec:4-8}
+Looks hard, skip
+
+
+\section*{Problem 4-9 (38)}
+\label{sec:4-9}
+Complete blackout will occur when the wavelength becomes so long that the wavenumber \(k = 0\) and the plasma frequency is equal to the frequency of the incident microwave. The critical density at which this occurs is given by
+\begin{equation*}
+	n_c = \dfrac{m\epsilon_0\omega^2}{e^2} = 1.12 \times 10^{15}\text{m}^{-3}.
+\end{equation*}
+
+\section*{Problem 4-10 (39)}
+\label{sec:4-10}
+Starting from the relevant equations for electromagnetic waves in a vacuum we have
+\begin{equation*}
+	\nabla \times \bm{E} = -\dot{\bm{B}}, \quad \nabla \times \bm{B} = \mu_0 \bm{j} + \dfrac{\dot{\bm{E}}}{c^2}.
+\end{equation*}
+Taking the time derivative of the second equation follow by substitution of the first gives
+\begin{equation*}
+	-\nabla \times \nabla \times \bm{E} = -\left(\mu_0\dot{\bm{j}} + \dfrac{\ddot{\bm{E}}}{c^2} \right)
+\end{equation*}
+If we assume plane waves, we have \(\nabla = \bm{k} \) and \(\ddot{(\dots)} = \omega^2 \), we can re-express the above equation as
+\begin{equation*}
+	-\bm{k} \times \bm{k} \times \bm{E} = -\left(\mu_0n_0e(\dot{\bm{v}}_+ - \dot{\bm{v}}_-) + \dfrac{\omega^2}{c^2}\bm{E} \right) = k^2\bm{E} - \bm{k}\cancel{(\bm{k}\cdot\bm{E})},
+\end{equation*}
+where in the second equation we have used the fact that transverse waves imply \(\bm{k}\cdot\bm{E} = 0 \). In order to obtain expressions for the accelerations of the electrons and positrons \(\dot{\bm{v}}_+\), and \( \dot{\bm{v}}_- \), respectively, we invoke the linearized electron equation of motion ([4-83]), and say that
+\begin{equation*}
+	\bm{v_\pm} = \dfrac{e\bm{E}}{im\omega} \implies \dot{\bm{v}}_\pm = \dfrac{e}{m}\bm{E} 
+\end{equation*}
+Combining our equations, we obtain
+\begin{equation*}
+	\omega^2 - c^2k^2 = \dfrac{2n_0e^2}{\epsilon_0m} = 2\omega_p^2.
+\end{equation*}
+We therefore say that the dispersion relation for high-frequency electromagnetic waves in our primordial universal plasma is
+\begin{equation*}
+	\omega^2 = 2\omega^2_p + c^2k^2.
+\end{equation*} 
+
+With regard to ions, we note that by assuming our electrons and positrons follow the Boltzmann relation, we have
+\begin{equation*}
+	n_\pm = n_0\exp\left(\dfrac{\mp e\phi}{k_BT_\pm} \right).
+\end{equation*}
+We will assume \(T_+ = T_- \equiv T_e, \), and state that our linearized density perturbation is given by
+\begin{equation*}
+	n_{1\pm} = \mp n_0 e  \phi /k_BT_e.
+\end{equation*}
+Again assuming plane waves, we can invoke our linearized equations of motion ([4-21]--[4-23]) for our proton and anti-proton motions to obtain (after some a few straightforward rearrangements)
+\begin{align*}
+	N_{1\pm} =& n_o\dfrac{k}{\omega}V_{\pm}\\
+	V_{1\pm} =& \pm \dfrac{e{k}\phi}{m\omega} \\
+	N_{1\pm} =& \pm \dfrac{k^2}{\omega^2}\dfrac{n_0e\phi}{M}.
+\end{align*}
+This expression can be used with Poisson's equation
+\begin{equation*}
+	\nabla \cdot \epsilon_0 \bm{E}_1 = \left(N_+ - N_- + n_+ - n_- \right),
+\end{equation*}
+to obtain
+\begin{equation*}
+	\nabla \cdot \bm{E} = k^2\phi = \dfrac{e}{\epsilon_0}\left[\left(2\dfrac{k^2}{\omega^2}\right)\dfrac{n_0e\phi}{M} - 2n_0\dfrac{e\phi}{k_BT_e} \right] = \dfrac{2n_0e^2k^2}{\epsilon_0\omega^2M}\phi - \dfrac{2n_0e^2}{k_BT_e}\phi.
+\end{equation*}
+Recognizing that \(\lambda_D^2 \equiv \dfrac{kT_e\epsilon_0}{n_0e^2} \), and \(\Omega_p^2 = \dfrac{n_0e^2}{\epsilon_0M}\), we obtain the following relation
+\begin{equation*}
+	k^2\phi = 2\phi\left(\Omega_p^2\dfrac{k^2}{\omega^2} - \dfrac{1}{\lambda_D^2} \right).
+\end{equation*}
+Rearranging the above we obtain
+\begin{equation*}
+	\dfrac{\omega^2}{k^2} = \dfrac{k_BT/M}{1 + k^2\lambda^2/2}
+\end{equation*}
+Which is the dispersion relation for the for ion waves in our equally matter and anti-matter universe.
+
+\section*{Problem 4-11 (40)}
+\label{sec:4-11}
+We first note the definition of the index of refraction and the relevant plasma dielectric constant (obtained in problem 4-4), to be respectively
+\begin{equation*}
+	\eta \equiv \dfrac{c}{v_\phi} = c\dfrac{k}{\omega}, \quad \epsilon = 1 - \dfrac{\omega_p^2}{\omega^2}.
+\end{equation*}
+Starting from our dispersion relation, we can show that the index of refraction is equal to the square root of our plasma dielectric constant as follows
+\begin{equation*}
+	\omega^2 = \omega_p^2  + c^2k^2 \implies 1-\dfrac{\omega^2_p}{\omega^2} = \dfrac{c^2k^2}{\omega^2} \implies \epsilon = \eta^2.
+\end{equation*}
+
+\section*{Problem 4-12 (41)}
+\label{sec:4-12}
+Our equation for our critical density is derived from the dispersion relation
+\begin{equation*}
+	\omega^2 = \omega_p^2 + c^2k^2,
+\end{equation*}
+which assumes that the current density comes entirely from electron motion. Since we have replaced some of our electrons with chlorine ions which have too much inertia to respond to microwave signals we must update our current density equation to be
+\begin{equation*}
+	\bm{j}_1 = -n_0e\bm{v}_{e1}(1-\kappa),
+\end{equation*}
+where \(\kappa \) is the fraction of replaced electrons. This updates equation [4-84] to become 
+\begin{equation*}
+	\left(\omega^2 - c^2k^2 \right)\bm{E}_1 = \dfrac{n_0e^2}{\epsilon_0m}\left(1-\kappa\right)\bm{E}_1,
+\end{equation*}
+yielding the dispersion relation
+\begin{equation*}
+	\omega^2 = (1-\kappa)\omega^2_p + c^2k^2.
+\end{equation*}
+We know that cutoff will occur when \(k=0\) and this gives \(\omega^2_\text{cutoff} = (1-\kappa)\omega^2_p = (1-\kappa)\frac{n_0e^2}{\epsilon_0m} \). Using the fact that we seek to cutoff a \(3\)cm wave we know that \(f = \frac{c}{\lambda} = 10^{10} \)Hz. This yields a critical density of
+\begin{equation*}
+	n_c = 3.1\times 10^{18}\text{m}^{-3}. %\dfrac{m\epsilon_0(1-\kappa)\omega_p}{e^2}
+\end{equation*}
+
+\section*{Problem 4-13 }
+\label{sec:4-13}
+Maybe come back to this one
+
+\section*{Problem 4-14 (42)}
+\label{sec:4-14}
+The wave equation for the extraordinary wave can be expressed as in equation [4-101] to yield
+\begin{equation*}
+	(\omega^2 - \omega^2_h)E_x = i\dfrac{\omega^2_p\omega_c}{\omega}E_y = 0.
+\end{equation*}
+Resonance implies the wave frequency \(\omega \) being equal to the upper hybrid frequency \(\omega_h \), taking this to be the case, our above equation yields \(E_y = 0 \). We therefore say that since \(\bm{E} = E\hat{x}\) and \(\bm{k} = k\hat{x} \), we have \(\bm{E}\parallel\bm{k} \) and the extraordinary wave is therefore purely electrostatic at resonance.
+
+
+\section*{Problem 4-15 (43)}
+\label{sec:4-15}
+We first hope to show that \(\omega_h < \omega_R \); we note that by setting \(k=0\) in our dispersion relation we obtain the cutoff frequency equation [4-107] which says that
+\begin{equation*}
+	\omega_R^2 = \omega_R\omega_c + \omega_p^2.
+\end{equation*}
+We furthermore note that from the definition of the right-hand cutoff frequency we have
+\begin{equation*}
+	\omega_R \equiv \frac{1}{2}\left[\omega_c + (\omega_c^2 + 4\omega_p^2)^{1/2} \right] > \omega_c.
+\end{equation*}
+This implies that 
+\begin{equation*}
+	\omega^2_R = \omega_R\omega_c + \omega_p^2 > \omega_c^2 + \omega^2_p \equiv \omega_h^2,
+\end{equation*}
+which is our rightmost inequality. Next we simply note from the definition of the upper hybrid frequency that \(\omega^2_h \equiv \omega^2_c + \omega^2_p \implies \omega_p < \omega_h \). Lastly, we state the definition of the left-hand cutoff:
+\begin{equation*}
+	\omega_L \equiv \frac{1}{2}\left[\omega_c - (\omega_c^2 + 4\omega_p^2)^{1/2} \right],
+\end{equation*}
+and since inserting a positive constant to the right side of this equation will yield an inequality we say that
+\begin{equation*}
+\omega_L < \frac{1}{2}\left[\omega_c - (\omega_c^2 +4\omega_c\omega_p 4\omega_p^2)^{1/2} \right] = \frac{1}{2}\left[\omega_c - (\omega_c + 2\omega_p) \right] = \omega_p.
+\end{equation*}
+Putting all of this together we have \(\omega_L < \omega_p < \omega_h < \omega_R \), which is how the critical points are ordered in figure 4-36.
+
+\section*{Problem 4-16 (44)}
+\label{sec:4-16}
+Neglecting ion motions, the dispersion relation for X-waves is given by equation [4-104]
+\begin{equation*}
+	c^2k^2 = \omega^2 - \omega^2_p\dfrac{\omega^2 - \omega_p^2}{\omega^2 - \omega_h^2},
+\end{equation*}
+where the group velocity is given by
+\begin{equation*}
+	v_g = \dfrac{d\omega}{dk}.
+\end{equation*}
+As such, we differentiate both sides of our first equation to obtain
+\begin{equation*}
+	2kc^2dk = 2\omega d\omega - \dfrac{2\omega(\omega^2_p - \omega^2_h)}{(\omega^2 - \omega_h^2)^2}\omega_p^2d\omega.
+\end{equation*}
+Our group velocity is therefore given by
+\begin{equation*}
+	v_g = \dfrac{kc^2}{\omega\left[1 + \dfrac{\omega_c^2\omega_p^2}{(\omega^2 - \omega_h^2)^2} \right]}.
+\end{equation*}
+Cutoffs and resonances occur when \(k\to\infty \) and \(k=0\), respectively. Taking \(k\to\infty\) implies \(\omega=\omega_h \), but since \(\left[1 + \dfrac{\omega_c^2\omega_p^2}{(\omega^2 - \omega_h^2)^2} \right] \) is higher order than \(k\) it will go to infinity more quickly than the numerator, and the group velocity will be zero. Taking \(k=0\) gives very clearly a group velocity of zero.
+
+\section*{Problem 4-17 }
+\label{sec:4-17}
+Requires drawing
+
+\section*{Problem 4-18 (45)}
+\label{sec:4-18}
+For an L-wave, the dispersion relation is given by
+\begin{equation*}
+	\dfrac{c^2k^2}{\omega^2} = 1 - \dfrac{\omega_p^2/\omega^2}{1 + \omega_c/\omega}.
+\end{equation*}
+Cutoff occurs when \(k=0\), implying
+\begin{align*}
+	0=&1 - \dfrac{\omega_p^2/\omega^2}{1 + \omega_c/\omega} \\
+	\dfrac{\omega_p^2}{\omega^2} =& 1 + \dfrac{\omega_c}{\omega} \\
+	\omega_p^2 =& \omega^2 + \omega_c\omega \\
+	\dfrac{n_0e^2}{m\epsilon_0} =& \omega + \omega\dfrac{eB}{m}\\
+	n_0 =& \dfrac{m\epsilon_0}{e^2}\left[2\pi f + 2\pi f\dfrac{eB}{m} \right]\\
+	n_0 =& 3.89 \times 10^{17}\text{m}^{-3}.
+\end{align*}
+Which is our critical density for our L-wave with \(f = 2.8\)GHz and \(B = 0.3\)T.
+
+\section*{Problem 4-19 (46)}
+\label{sec:4-19}
+Using the dispersion relation for R waves and the definition of the phase velocity we obtain
+\begin{equation*}
+	\dfrac{c^2k^2}{\omega^2} = c^2v_\phi^{-2} = 1 - \dfrac{\omega_p^2/\omega^2}{1 - \omega_c/\omega}.
+\end{equation*}
+The maximum can be determined via differentiation
+\begin{equation*}
+	-2c^2v_\phi^{-3}\dd{v_\phi}{\omega} = \dfrac{\omega_p^2(2\omega - \omega_c)}{\left(\omega^2 - \omega\omega_c\right)^2}.
+\end{equation*}
+The maximum will occur when \(2\omega - \omega_c \) or \(\omega = \frac{1}{2}\omega_c \), which is what we expected for our Whistler mode. 
+Plugging this value into our original equation, we obtain
+\begin{equation*}
+	\left.\dfrac{c^2}{v^2_\phi}\right|_{\omega = \frac{1}{2}\omega_c} = 1 - \dfrac{4\omega_p^2/\omega_c^2}{1 - 2} = 1 + \dfrac{4\omega_p^2}{\omega_c^2} > 1.
+\end{equation*}
+Therefore, the maximum phase velocity of the whistler mode occurs at \(\omega = \frac{1}{2}\omega_c\) and is less than the speed of light. 
+
+WHISTLER MODE IS LOW FREQ REGION
+
+\section*{Problem 4-20 (47)}
+\label{sec:4-20}
+Like in problem 4-16, we will again differentiate both sides of the dispersion relation (although this time for R --- rather than X --- waves) to obtain
+\begin{equation*}
+	2kc^2dk = 2\omega d\omega - \dfrac{(\omega - \omega_c) - \omega}{(\omega - \omega_c)^2}\omega_p^2d\omega.
+\end{equation*}
+If \(\omega \ll \omega_c \), we can express our group velocity as
+\begin{equation*}
+	\dd{\omega}{k} = \dfrac{kc^2}{\omega + \omega_p^2/2\omega_c}.
+\end{equation*}
+Also, if \(\omega \ll \omega_c \), the dispersion relation is approximately
+\begin{equation*}
+	c^2k^2 \approx \dfrac{\omega^2_p\omega}{\omega_c} + \omega^2
+\end{equation*}
+Substituting this into our group velocity expression gives
+\begin{equation*}
+	v_g = c\dfrac{\sqrt{1 + \omega_p^2/(\omega\omega_c)}}{1 + \omega_p^2/(2\omega\omega_c)}
+\end{equation*}
+If we assume \(\omega_p^2 \ll \omega\omega_c \), i.e. \(v_\phi^2 \ll c^2 \), then we obtain our desired proportionality
+\begin{equation*}
+	\dd{\omega}{k} \approx 2c\left(\dfrac{\omega\omega_c}{\omega_p^2}\right)^{\frac{1}{2}} \propto \omega^{\frac{1}{2}}.
+\end{equation*}
+
+\section*{Problem 4-21 (48)}
+\label{sec:4-21}
+Having a positronium plasma implies that, unlike before where the current density was assumed to come entirely as a result of electron motions, we must now update equation [4-82] to be
+\begin{equation*}
+	\bm{j}_1 = n_0e\left(v_p - v_e\right).
+\end{equation*}
+From the linearized equation of motion without thermal effects [4-98], we update to include different signs of charge
+\begin{equation*}
+	v_x = \dfrac{\pm ie}{m\omega}\left(E_x \pm \dfrac{i\omega_c}{\omega}E_y \right)\left(1 - \dfrac{\omega_c^2}{\omega^2}\right)^{-1} 
+\end{equation*} 
+\begin{equation*}
+	v_y = \dfrac{\pm ie}{m\omega}\left(E_y \mp \dfrac{i\omega_c}{\omega}E_x \right)\left(1 - \dfrac{\omega_c^2}{\omega^2}\right)^{-1} 
+\end{equation*}
+Using these in our wave equation [4-80], while still ignoring the longitudinal term we have
+\begin{equation*}
+	\left(\omega^2 - c^2k^2 \right)\bm{E}_1 = in_0\omega e(\bm{v}_{e1} - \bm{v}_{p1})/\epsilon_0.
+\end{equation*}
+Substituting our velocity formulas into our wave equation yields the \(x\)-component of this to be
+\begin{equation*}
+	\left(\omega^2 - c^2k^2 \right)E_x = \left(\dfrac{-i\omega}{\epsilon_0} \right)(n_0 e)\left(\dfrac{ie}{m\omega} \right)2E_x\left(1 - \dfrac{\omega_c^2}{\omega^2}\right)^{-1} = \dfrac{2\omega_p^2}{1 - \omega_c^2/\omega^2}E_x.
+\end{equation*}
+Similarly for our \(y\)-component we have
+\begin{equation*}
+\left(\omega^2 - c^2k^2 \right)E_y = \dfrac{2\omega_p^2}{1 - \omega_c^2/\omega^2}E_y.
+\end{equation*}
+In either case the dispersion relation is
+\begin{equation*}
+	\dfrac{c^2k^2}{\omega^2} = 1 - \dfrac{2\omega_p^2}{\omega^2 - \omega_c^2}.
+\end{equation*}
+This equation --- unlike equation [4-104] --- has a single solution when \(k=0\) given by \(\omega = \sqrt{\omega_c^2 + 2\omega_p^2} \). Therefore the positronium plasma will not experience any Faraday rotation introduced by the multiple cutoff frequencies.
+
+\section*{Problem 4-22 (??)}
+\label{sec:4-22}
+The angular wavenumber for each of the R- and L- waves will be given by
+\begin{equation*}
+	k_{R,L} = k_0
+\end{equation*}
+
+
+\section*{Problem 4-23 (??)}
+\label{sec:4-23}
+Since we have \(\omega^2 \gg \omega_p^2,\omega^2_c \) we can expand the square roots for \(k_{R,L} \) such that
+\begin{equation*}
+	k_R = \dfrac{\omega}{c}\left(1 - \dfrac{\omega_p^2/\omega^2}{1 - \omega_c/\omega} \right)^{1/2} \approx
+\end{equation*}
+
+\section*{Problem 4-25 (49)}
+\label{sec:4-25}
+The dispersion relationship for X-waves is given by equation [4-104], while the specific cutoff frequency relation is given by equation [4-107]
+\begin{equation*}
+	\omega^2 \pm \omega\omega_c = \omega_p^2 = \dfrac{n_0e^2}{m\epsilon_0}
+\end{equation*}
+
+NEED TO COME BACK TO THESE LAST FEW PROBLEMS
+
+\section*{Problem 4-26}
+\label{sec:4-26}
+The Alfv\'en velocity is given by
+\begin{equation*}
+	v_A = \dfrac{B}{\sqrt{\mu_0\rho}} = 8.92 \times 10^{-6}\text{m/s}.
+\end{equation*}
+Since the Alfv\'en velocity represents a phase velocity is can be larger than \(c\), but since no information is propagating this does not imply that anything is travelling through space faster then light. 
+
+\section*{Problem 4-27}
+\label{sec:4-27}
+Since we have \(\rho = nM \), we can say that our Alfv\'en velocity is 
+\begin{equation*}
+v_A = \dfrac{B}{\sqrt{\mu_0nM_H}} = 2.183 \times 10^{4}\text{m/s}.
+\end{equation*}
+
+\section*{Problem 4-28}
+\label{sec:4-28}
+This one is easy but requires a diagram. 
+
+\section*{Problem 4-29}
+\label{sec:4-29}
+Having a standing wave with maximum amplitude at the mid-plane and nodes at the edges of the plasma column requires a wavelength of \(\lambda = 2L \), where \(L\) is the radius of the cylindrical plasma column. Using the definition of the angular wavenumber, Alfv\'en velocity, and ion cyclotron frequency, respectively, we obtain
+\begin{equation*}
+	L = \dfrac{\lambda}{2} = \dfrac{\pi}{k} = \dfrac{\pi v_A}{\omega} = \dfrac{\pi v_A}{0.1\Omega_c} = \dfrac{\pi B M}{0.1eB\sqrt{\mu_0nM}} = 2.26\text{m}.
+\end{equation*}
+If the Q-machine were used instead we would have
+\begin{equation*}
+	L =  \dfrac{\pi B M}{0.1eB\sqrt{\mu_0n'M'}} = 82\text{m}.
+\end{equation*}
+
+\section*{Problem 4-30}
+\label{sec:4-30}
+Ignoring the interstellar magnetic field, our dispersion relation is given by equation [4-85]
+\begin{equation*}
+	\omega^2 = \omega_p^2 + c^2k^2 \implies \dfrac{c^2k^2}{\omega^2} = 1 - \dfrac{\omega_p^2}{\omega^2}.
+\end{equation*}
+Differentiating both sides of the first equation yields
+\begin{equation*}
+	2\omega d\omega = 2kc^2dk \implies v_g = c\left(1 - \dfrac{\omega_p^2}{\omega^2}\right)^{1/2} \approx c\left(1 - \dfrac{\omega_p^2}{2\omega^2}\right).
+\end{equation*}
+Our approximation is valid as long as \(\omega^2 \gg \omega_p^2 \). Since \(t = x/v_g \), we can obtain an expression for \(\dd{t}{\omega} \) by differentiating the inverse of the group velocity like so
+\begin{equation*}
+	\dd{t}{\omega} = \dfrac{x}{c}\left(1 - \dfrac{\omega_p^2}{\omega^2}\right)^{-2}\left(-\dfrac{\omega_p^2}{\omega^2} \right) \approx -\dfrac{x}{c}\dfrac{\omega_p^2}{\omega^3}.
+\end{equation*}
+Taking the recipricol implies that 
+\begin{equation*}
+	\dd{f}{t} \approx -\dfrac{c}{x}\dfrac{f^3}{f^2_p}.
+\end{equation*}
+In order to determine the distance of the pulsar, we have
+\begin{equation*}
+	x = \dfrac{cf^3}{f^2_p}\left(-\dd{f}{t} \right)^{-1} = 63\text{ parsecs}.
+\end{equation*}
