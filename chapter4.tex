@@ -827,9 +827,67 @@ which gives a lower limit to the plasma density in the Crab nebula.
 
 \section*{Problem 4-45 (67)}
 \label{sec:4-45}
+By assuming that the atmosphere of Jupiter contains cold, single charged ions, we can take \(k_BT_i = 0 \). The sonic velocty is then
+\begin{equation*}
+	v_s = \left(\dfrac{k_BT_e}{M} \right)^{1/2},
+\end{equation*}
+while the Alfv\'en velocity is 
+\begin{equation*}
+	v_A = \dfrac{B}{\sqrt{\mu_0Mn_0}}.
+\end{equation*}
+Since the instruments on our spacecraft indicate that we have acoustic shock waves but not magnetic shock waves, we know that
+\(v > v_s \), this is to say that
+\begin{equation*}
+	v^2 > \dfrac{k_BT_e}{M} \implies T_e < \dfrac{Mv^2}{k_B} = 1.2.2\times 10^7\text{K}.
+\end{equation*}
+Likewise, since we are not detecting any magnetic shock waves we know that \(v < v_A \)
+\begin{equation*}
+	v^2 < \dfrac{B^2}{\mu_0Mn_0} \implies n_0 < \dfrac{B}{\mu_0Mv^2} = 4.76\times 10^{11}\text{m}^{-3}.
+\end{equation*}
+These inequalities give the upper limits on temperature and density.
 
 \section*{Problem 4-46 (68)}
 \label{sec:4-46}
+If we let \(\omega = \omega_R \) and \(\omega = \omega_h \) at \(r_1\) and \(r_2\) respectively, then we have, the the definitions of \(\omega_R\) and \(\omega_h \)
+\begin{equation*}
+	\omega_{p1}^2 = \omega^2 - \omega\omega_c
+\end{equation*}
+\begin{equation*}
+	\omega_{p2}^2 = \omega^2 - \omega_c^2.
+\end{equation*}
+Taking the difference of these two equations yields
+\begin{equation*}
+	\omega_{p2}^2 - \omega_{p1}^2 = \dfrac{e^2}{\epsilon_0m}\left(n_2 - n_1\right) = \omega_c\left(\omega - \omega_c \right),
+\end{equation*}
+or
+\begin{equation*}
+	n_2 - n_1 = \dfrac{\epsilon_0 m}{e^2}\left(\omega - \omega_c\right)\omega_c.
+\end{equation*}
+If we approximate our difference with a derivative, we obtain
+\begin{equation*}
+	n_2 - n_1 \approx d\left|\pp{n}{r}\right|.
+\end{equation*}
+using the approximation provided in the problem statement gives
+\begin{equation*}
+	n_2 - n_1 \approx d\left|\pp{n}{r}\right| \approx d\dfrac{n_1}{r_0}.
+\end{equation*}
+From our definition of \(\omega_{p1}^2 = \dfrac{n_1e^2}{\epsilon_0m} = \omega(\omega - \omega_c) \), we can substitute for \(n_1\) as follows
+\begin{equation*}
+	d\dfrac{n_1}{r_0} = \dfrac{\epsilon_0m}{e^2}\omega(\omega - \omega_c)\dfrac{d}{r_0}.
+\end{equation*}
+What we can say now is that
+\begin{align*}
+	n_2 - n_1 \approx& \;\dfrac{\epsilon_0 m }{e^2}\omega(\omega - \omega_c)\dfrac{d}{r_0}\\
+	\dfrac{e^2}{\epsilon_0 m }(n_2 - n_1) \approx& \;\omega(\omega - \omega_c)\dfrac{d}{r_0}\\
+	\omega_c(\omega - \omega_c) \approx& \;\omega(\omega - \omega_c)\dfrac{d}{r_0}\\
+	d =& \dfrac{\omega_c}{\omega}r_0.
+\end{align*}
+This is to say that the length of the evanescent layer is given by \(d = \dfrac{\omega_c}{\omega}r_0.\)
 
-\section*{Problem 4-48 (69)}
+\section*{Problem 4-47}
+\label{sec:4-47}
+Easy, but requires drawing
+
+\section*{Problem 4-48}
 \label{sec:4-48}
+Seems tough, and so do 49, 50, 51

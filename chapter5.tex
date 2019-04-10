@@ -1,0 +1,41 @@
+\chapter*{Chapter Five}
+\label{ch:Five}
+
+\section*{Problem 5-1 (69)}
+\label{sec:5-1}
+By the definition of the electron diffusion coefficient, we have \(D_e \equiv \dfrac{k_BT_e}{m\nu} \), each factor can be given by
+\begin{align*}
+	k_BT_e =& 2\text{eV},\\
+	v =& \left(\dfrac{2E}{m}\right)^{1/2} = 8.39 \times 10^5 \text{m/s},\\
+	n_0 =& \dfrac{N}{V} = \dfrac{P}{k_BT_e} = 3.3\times 10^{22} \text{m}^{-1}, \\
+	\nu =& n_0\overline{\sigma v} = n_0\sigma v = 1.46 \times 10^9\text{s}^{-1}.
+\end{align*}
+These give an electron diffusion coefficient of
+\begin{equation*}
+	D_e = 2.4\times10^2\text{m}^2\text{s}^{-1}.
+\end{equation*}
+
+Current density is given by \(\bm{j} = \mu n e \bm{E} \), the electron mobility can be determined using the Einstein relation
+\begin{equation*}
+	\mu_e = \dfrac{eD_e}{k_BT_e} = 1.2\times 10^2 \text{m}^2\text{V}^{-1}\text{s}^{-1}.
+\end{equation*}
+The electic field stength is therefore given by
+\begin{equation*}
+	E = \dfrac{j}{\mu ne} = 1.04 \times 10^4 \text{V}/\text{m}
+\end{equation*}
+
+
+\section*{Problem 5-2 (70)}
+\label{sec:5-2}
+If the plasma decays by both diffusion and recombination then the density must satisfy
+\begin{equation*}
+	\pp{n}{t} = D\nabla^2n - \alpha n^2.
+\end{equation*}
+Since we have a one-dimensional, time-independent problem, with \(n = n_0\cos(\pi x/2L)\) this simplifies to
+\begin{equation*}
+	D\dfrac{\partial^2n}{\partial x^2} = -D\left(\dfrac{\pi}{2L}\right)^2n = -\alpha n^2.
+\end{equation*}
+Solving for \(n\) yields
+\begin{equation*}
+	n = \dfrac{D}{\alpha} \left(\dfrac{\pi}{2L}\right)^2 = 1.1\times 10^{18}\text{m}^{-3}.
+\end{equation*}
