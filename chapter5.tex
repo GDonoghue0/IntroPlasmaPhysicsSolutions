@@ -1,4 +1,4 @@
-\chapter*{Chapter Five}
+\chapter{Diffusion and Resistivity}
 \label{ch:Five}
 
 \section*{Problem 5-1 (69)}
@@ -19,7 +19,7 @@ Current density is given by \(\bm{j} = \mu n e \bm{E} \), the electron mobility 
 \begin{equation*}
 	\mu_e = \dfrac{eD_e}{k_BT_e} = 1.2\times 10^2 \text{m}^2\text{V}^{-1}\text{s}^{-1}.
 \end{equation*}
-The electic field stength is therefore given by
+The electric field strength is therefore given by
 \begin{equation*}
 	E = \dfrac{j}{\mu ne} = 1.04 \times 10^4 \text{V}/\text{m}
 \end{equation*}
@@ -39,3 +39,301 @@ Solving for \(n\) yields
 \begin{equation*}
 	n = \dfrac{D}{\alpha} \left(\dfrac{\pi}{2L}\right)^2 = 1.1\times 10^{18}\text{m}^{-3}.
 \end{equation*}
+
+\section*{Problem 5-4 (71)}
+\label{sec:5-4}
+The ambipolar diffusion coefficient \(D_{a\perp} \), given by
+\begin{equation*}
+	D_{a\perp} \equiv \dfrac{\mu_{i\perp}D_{e\perp} + \mu_{e\perp}D_{i\perp}}{\mu_{e\perp} + \mu_{i\perp}}
+\end{equation*}
+can be approximated by either
+\begin{equation*}
+	D_{a\perp} \approx D_{i\perp} + \dfrac{\mu_{i\perp}}{\mu_{e\perp}}D_{e\perp}, \quad \text{when } \mu_{e\perp} \gg \mu_{i\perp},
+\end{equation*}
+or
+\begin{equation*}
+	D_{a\perp} \approx D_{e\perp} + \dfrac{\mu_{e\perp}}{\mu_{i\perp}}D_{i\perp}, \quad \text{when } \mu_{i\perp} \gg \mu_{e\perp}.
+\end{equation*}
+We know that 
+\begin{equation*}
+	\mu_{j\perp} = \dfrac{\pm e}{m_j\nu}\dfrac{1}{1 + \omega^2_{jc}\tau^2_j}
+\end{equation*}
+for the \(j\)-th species. Since we know that the electron-neutral collision cross section is the same for each species and the collision frequency \(\nu \) is proportional to the thermal velocity for each species, we will say that
+\begin{equation*}
+	\dfrac{\mu_e}{\mu_i} = \dfrac{eM\nu_i}{em\nu_e} \approx \left(\dfrac{M}{m}\right)^{1/2} = 85.7.
+\end{equation*}
+Since we are interested in the perpendicular mobility coefficients, we take
+\begin{equation*}
+	1 + \Omega_c^2\tau_i^2 = 1.08, \quad 1 + \omega_c^2\tau_e^2 = 580,
+\end{equation*}
+where we have used the fact that \(\tau = \nu^{-1} \), which was determined in problem [5-1], and that \(\Omega_c\tau_i = \omega^c\tau_e\left(\dfrac{m}{M}\right)\left(\dfrac{M}{m}\right)^{1/2} \). Putting all this together, we determine that 
+\begin{equation*}
+	\dfrac{\mu_{e\perp}}{\mu_{i\perp}} = \dfrac{\mu_e}{\mu_i}\dfrac{1 + \Omega_c^2\tau_i^2}{1 + \omega_c^2\tau_e^2} = 0.16 \ll 1.
+\end{equation*}
+Therefore, we say that 
+\begin{equation*}
+	D_{a\perp} \approx D_{e\perp} + \dfrac{\mu_{e\perp}}{\mu_{i\perp}}D_{i\perp} = D_{e\perp} + 0.16D_{i\perp}.
+\end{equation*}
+We would however, like to see if \(D_{a\perp} \approx D_{e\perp} \). To do so, we will note that since \(D = \frac{k_BT}{e}\mu \) by the Einstein relation, we can say that
+\begin{equation*}
+	\dfrac{D_{i\perp}}{D_{e\perp}} = \dfrac{\mu_{i\perp}}{\mu_{e\perp}}\dfrac{T_i}{T_e} = 0.3, \implies D_{i\perp} = 0.3D_{e\perp}.
+\end{equation*}
+Given this, we know now that
+\begin{equation*}
+	D_{a\perp} \approx D_{e\perp}\left[1 + (0.16)(0.3) \right] = 1.05D_{e\perp} \approx D_{e\perp.}
+\end{equation*}
+
+In order to determine the confinement time \(\tau \), we note that we are given the fact that
+\begin{equation*}
+	n(r=a) = 0 \;\&\; J_0(z = 2.4) = 0 \implies 2.4 = \dfrac{a}{(D\tau)^{1/2}} \implies \tau = \dfrac{1}{D_{a\perp}}\dfrac{a^2}{5.76}.
+\end{equation*}
+Since we solved for \(D_e\) in problem [5-1] we can compute our confinement time to be
+\begin{equation*}
+	\tau = \dfrac{1}{(2.4\times 10^{-2})^2}\dfrac{580}{2.4\times 10^2} = 42\mu\text{s}.
+\end{equation*}
+
+\section*{Problem 5-5 (72)}
+\label{sec:5-5}
+For this problem, we will equate the source and particle flux terms like so, noting that we have two walls through which particles are passing
+\begin{equation*}
+	2\Gamma = -D\dd{n}{x} = Q.
+\end{equation*}
+Our density and its derivative are given by
+\begin{equation*}
+	n = n_0\begin{cases}
+	1 - \dfrac{x}{L} \quad x > 0 \\
+	\\
+	1 + \dfrac{x}{L} \quad x < 0 
+	\end{cases}, \quad 
+	\dd{n}{x} = n_0\begin{cases}
+	 - \dfrac{1}{L} \quad x > 0 \\
+	\\
+	\;\;\;\dfrac{1}{L} \quad x < 0 .
+	\end{cases}
+\end{equation*}
+Combining these results gives 
+\begin{equation*}
+	Q = 2\Gamma = \dfrac{2Dn_0}{L} \implies n_0 = \dfrac{QL}{2D}.
+\end{equation*}
+This is our expression for the peak density in terms of the problem parameters.
+
+\section*{Problem 5-6 (73)}
+\label{sec:5-6}
+If the main loss mechanism is recombination, we will ignore diffusion terms and note that the equation of continuity is
+\begin{equation*}
+	\pp{n}{t} = -\alpha n^2,
+\end{equation*}
+the solution of which is given by equation [5-42]
+\begin{equation*}
+	\dfrac{1}{n(t)} = \dfrac{1}{n_0} + \alpha t.
+\end{equation*}
+Since we know that after 10msec the density has decayed to half of its initial value we can say that \(n(t = 10\text{ms} = \tau) = n_0/2 \) and our density is given by
+\begin{equation*}
+	\dfrac{2}{n_0} = \dfrac{1}{n_0} + \alpha \tau.
+\end{equation*}
+Solving for \(\alpha\) we obtain
+\begin{equation*}
+	\alpha = \dfrac{1}{n_0 \tau} = \dfrac{1}{(10^{20}\text{m}^{-3})(10\text{ms})} = 10^{-18}\text{m}^3/\text{s}.
+\end{equation*}
+This is the value of our recombination coefficient in units of meters cubed per second. 
+
+\section*{Problem 5-7 (74)}
+\label{sec:5-7}
+The electron-ion mean free path is equal to the product of the electron-ion mean collision time and the relative velocity between the two species; we will approximate the velocity between the species to be the electron thermal velocity. This gives
+\begin{equation*}
+	\lambda_{ei} = \tau_{ei}v_{the}.
+\end{equation*}
+Using the definition of the electron-ion collision frequency (equation [5-62]) we obtain
+\begin{equation*}
+	\lambda_{ei} = \dfrac{v_{the}}{\nu_{ei}} = \dfrac{v_{the}m}{ne^2\eta}.
+\end{equation*}
+Lastly, we will substitute the definition of the specific resistivity \(\eta \) (equation [5-71]) to obtain
+\begin{equation*}
+	\lambda_{ei} = \dfrac{v_{the}m}{ne^2\eta} = \dfrac{(k_BT_e/m)^{1/2}m}{ne^2}\dfrac{(4\pi\epsilon_0)^2(k_BT_e)^{3/2}}{\pi e^2 m^{1/2}\ln \Lambda} \propto T_e^{1/2}T_e^{3/2} = T_e^2.
+\end{equation*}
+The mean free path for electron ion collisions is therefore proportional to the electron temperature squared.
+
+\section*{Problem 5-8 (75)}
+\label{sec:5-8}
+Since our current is parallel to our magnetic field, we can simply use Ohm's law with the Spitzer resistivity, which is given by
+\begin{equation*}
+	\eta_{\parallel} = 5.2\times 10^{-5}\dfrac{Z\ln\Lambda}{T^{3/2}}\Omega \text{m} = (5.2\times 10^{-5})\dfrac{(1)(13.7)}{(500)^{3/2}} = 6.372\times 10^{-8} \Omega \text{m}.
+\end{equation*}
+Using this with Ohm's law we determine that we need an electric field of strength
+\begin{equation*}
+	E = \eta_{\parallel}j = \eta_{\parallel} I/A = 6.372\times 10^{-8} \Omega \text{m} \dfrac{200\text{kA}}{75\text{cm}^2} = 1.70\text{V/m}
+\end{equation*}
+in order to drive the current in the Tokamak as described.
+
+\section*{Problem 5-9 (76)}
+\label{sec:5-9}
+The classical diffusion coefficient formula for a plasma with distinct ion and electron temperatures is given by
+\begin{equation*}
+	D_\perp = \dfrac{\eta n \left(k_BT_e + k_BT_i\right)}{B^2}.
+\end{equation*}
+Since we are interested in the perpendicular diffusion coefficient, which depends on \(\eta_\perp\), we will note that this quantity can be taken to be twice the Spitzer resistivity
+\begin{equation*}
+	\eta_{\perp} = 2\eta_{\parallel} = 5.2\times 10^{-5}\dfrac{Z\ln\Lambda}{T^{3/2}}\Omega \text{m} =10^{-9}\Omega \text{m},
+\end{equation*}
+where we have assume \(Z=1\). Using this value, along with other parameters given in the problem description we can determine the classical diffusion coefficient to be
+\begin{equation*}
+	D_{\perp} = 1.92\times 10^{-4}\text{m}^2\text{/s}.
+\end{equation*}
+
+For part (b), we will begin with the continuity equation and Fick's law, which say respectively that
+\begin{equation*}
+	\dd{N}{t} = 2\pi rL\Gamma = 2\pi r L (-D_\perp\pp{n}{r}).
+\end{equation*}
+We can deduce from the figure showing our density profile that
+\begin{equation*}
+	\pp{n}{r} = \dfrac{n}{0.1}.
+\end{equation*}
+Putting all of this together, we obtain
+\begin{equation*}
+	-\dd{N}{t} = 2\pi r L D_\perp \pp{n}{r} = (6.28)(0.50)(100)(1.92\times 10^{-4})(10^{21}/0.1) = 6.03 \times 10^{20}\text{s}^{-1}.
+\end{equation*}
+Lastly, we will estimate the confinement time by taking 
+\begin{equation*}
+	\tau = -\dfrac{N}{dN/dt} = -\dfrac{n\pi r^2 L}{dN/dt} = 150\text{s}.
+\end{equation*}
+
+%\section*{Problem 5-10}
+%\label{sec:5-10}
+%can we assume \(\tau \approx N/dN/dt \)?
+%
+%\section*{Problem 5-11}
+%\label{sec:5-11}
+%The classical perpendicular diffusion coefficient is given by
+%\begin{equation*}
+%	D_\perp = n\dfrac{k_BT_e}{B_0^2}\eta_\perp,
+%\end{equation*}
+%while the Bohm diffusion coefficient is given by
+%\begin{equation*}
+%	D_B \equiv \dfrac{k_BT_e}{16eB_0}.
+%\end{equation*}
+%The ratio of the of the two is
+%\begin{equation*}
+%	\dfrac{D_B}{D_\perp} = \dfrac{n\eta_\perp}{16eB_0} = \dfrac{(10^{19})(2.0)(5.2\times 10^{-5})(10)}{(16)(100)^{3/2}(1.602\times 10^{-19})(1)}\left(1 - \dfrac{r^2}{0.01} \right) = 1.04\times 10^{-7}\left(1 - \dfrac{r^2}{0.01} \right)
+%\end{equation*}
+%THIS IS PROBABLY WRONG. 
+
+\section*{Problem 5-13 (77)}
+\label{sec:5-13}
+Since our plasma is being heated by a current along \(\bm{B} \), the rate of Joule heating the electrons experience is given by
+\begin{equation*}
+	\dd{E}{t} = \eta_{\parallel}j^2 = (5.2\times 10^{-5}) \dfrac{\ln \Lambda}{T^{3/2}}j^2 = 10^{24}\text{eV}\text{m}^{-3}\text{s}^{-1}.
+\end{equation*}
+Since the density does not change, the derivative of the thermal energy is given by
+\begin{equation*}
+	\dd{E}{t} = \dfrac{3}{2}nk_B\dd{T}{t}.
+\end{equation*}
+Solving for the rate of increase of \(k_BT_e \) gives
+\begin{equation*}
+	k_B\dd{T_e}{t} = \dfrac{3}{2}n\dd{E}{t} = 0.067 \text{eV}/\mu\text{s}.
+\end{equation*}
+
+\section*{Problem 5-15 (78)}
+\label{sec:5-15}
+The \(\theta\)-components of the steady-state two-fluid axis-symmetric cylindrical plasma as described by the problem can be written as
+\begin{equation*}
+	en(\cancel{E_\theta}- v_{ir}B) - \cancel{\nabla_\theta p_i} - e^2n^2\eta(v_{i\theta} - v_{e\theta}) = 0,
+\end{equation*}
+\begin{equation*}
+	-en(\cancel{E_\theta} - v_{er}B) - \cancel{\nabla_\theta p_e} + e^2n^2\eta(v_{i\theta} - v_{e\theta}) = 0.
+\end{equation*}
+The \(\theta \) dependent terms cancel by construction. This leaves us with 
+\begin{equation*}
+	-en v_{ir}B - e^2n^2\eta(v_{i\theta} - v_{e\theta}) = 0,
+\end{equation*}
+\begin{equation*}
+	env_{er}B + e^2n^2\eta(v_{i\theta} - v_{e\theta}) = 0.
+\end{equation*}
+Taking the sum of these two equations yields
+\begin{equation*}
+	-v_{ir}B + v_{er}B = 0, \implies v_{ir} = v_{er}.
+\end{equation*}
+Knowing this, the \(r\)-components can be written as
+\begin{equation*}
+	en(E_r- v_{i\theta}B) - \pp{p_i}{r} - e^2n^2\eta\cancel{(v_{ir} - v_{er})} = 0,
+\end{equation*}
+\begin{equation*}
+	-en(E_r - v_{e\theta}B) - \pp{p_e}{r} + e^2n^2\eta\cancel{(v_{ir} - v_{er})} = 0.
+\end{equation*}
+Dividing through by \(enB \) and isolating the velocities yields
+\begin{equation*}
+	v_{i\theta} = -\dfrac{E_r}{B} + \dfrac{1}{enB}\pp{p_i}{r} \equiv v_e + v_{Di},
+\end{equation*}
+\begin{equation*}
+	v_{e\theta} = -\dfrac{E_r}{B} - \dfrac{1}{enB}\pp{p_e}{r} \equiv v_e + v_{Di}.
+\end{equation*}
+Where the second equality in both equations is simply the definition of the electric field and diamagnetic drift velocities fo the guiding centers. 
+
+Lastly, the third equation of this problem can be rearranged to show that
+\begin{equation*}
+	v_{ir} = - \dfrac{en\eta}{B}\left(v_{i\theta} - v_{e\theta} \right).
+\end{equation*}
+Using our expressions for \(v_{j\theta} \) from part (b) of this problem we obtain the expression for \(v_{ir}\) given by
+\begin{equation*}
+	v_{ir} = - \dfrac{\eta}{B^2}\left(\pp{p_i}{r} + \pp{p_e}{r} \right),
+\end{equation*}
+none of which depend on \(E_r\).
+
+\section*{Problem 5-17 (79)}
+\label{sec:5-17}
+The relevant single-fluid MHD equations, with the appropriate terms neglected can be linearized as
+\begin{equation*}
+	\rho_0\pp{\bm{v}_1}{t} = \bm{j}_1 \times \bm{B}_0, \quad \bm{E}_1 + \bm{v}_1 \times \bm{B}_0 = \eta\bm{j}_1.
+\end{equation*}
+The relevant Maxwell equations are given as
+\begin{equation*}
+	\nabla \times \bm{E}_1 = -\bm{\dot{B}_1}, \quad \nabla \times \bm{B}_1 = \mu\bm{j}_1.
+\end{equation*}
+As always, we will take the curl of the first equation and substitute the second, then assume transverse waves to obtain
+\begin{equation*}
+	k^2\bm{E}_1 = i\omega \mu_0 \bm{j}_1.
+\end{equation*}
+Solving for \(\bm{v}_{1} \) by taking the cross product of the second equation with \(\bm{B}_0\) yields
+\begin{equation*}
+	\bm{E}_1\times\bm{B}_0 + \underbrace{(\bm{v}_1 \times \bm{B}_0)\times \bm{B}_0}_{-\bm{v}_{1\perp}B_0^2} = \eta\bm{j}_1\times\bm{B}_0,
+\end{equation*}
+\begin{equation*}
+	 \bm{v}_1 = \dfrac{\bm{E}_1\times\bm{B}_0}{B_0^2} - \dfrac{\eta\bm{j}_1\times\bm{B}_0}{B_0^2}.
+\end{equation*}
+Using this equation with our first single fluid MHD equation ([4-85]) we obtain
+\begin{equation*}
+	-i\omega\rho_0\left(\dfrac{\bm{E}_1\times\bm{B}_0}{B_0^2} - \dfrac{\eta\bm{j}_1\times\bm{B}_0}{B_0^2} \right) = \bm{j}_1 \times \bm{B}_0.
+\end{equation*}
+From here, we notice that in order to satisfy Maxwell's equation above we must have \(\bm{E}\) and \(\bm{j}\) in the same direction. If we take them to both be in the \(\hat{x}\)-direction then the \(y\)-component of our equation above is
+\begin{equation*}
+	\dfrac{E_1}{B_0} = \left(\dfrac{iB_0}{\omega\rho_0} + \dfrac{\eta}{B_0}\right)j_1.
+\end{equation*}
+Using this equation and our Maxwell equation (the fifth equation in this problem) we arrive at
+\begin{equation*}
+	k^2E_1 = \mu_0i\omega\dfrac{E_1}{B_0}\left(\dfrac{iB_0}{\omega \rho_0} + \dfrac{\eta}{B_0}\right)^{-1} = \mu_0\omega^2\left(\dfrac{B_0^2}{\rho_0} - i\omega\eta \right)^{-1}E_1.
+\end{equation*}
+This equation can be rearranged to provide the dispersion relation
+\begin{equation*}
+	\dfrac{\omega^2}{k^2}  = c^2\epsilon_0\left(\dfrac{B_0^2}{\rho_0} - i\omega\eta \right).
+\end{equation*}
+
+In order to determine an expression for Im\((k)\) when \(\omega \) is real and \(\eta \) is small we first find an expression for \(k\)
+\begin{equation*}
+	k^2 = \mu\omega^2\left(\dfrac{B_0^2}{\rho_0} - i\omega\eta \right)^{-1}
+\end{equation*}
+\begin{equation*}
+	k = \omega\left(\dfrac{\mu_u\rho_0}{B_0^2}\right)^{1/2}\left(1 - \dfrac{i\omega\eta\rho_0}{B_0^2} \right)^{-1/2}.
+\end{equation*}
+Some algebra yields the imaginary part
+\begin{equation*}
+	\text{Im}(k) = \omega\dfrac{\omega\eta\rho_0}{2B_0^2}\left(\dfrac{\mu_0\rho_0}{B_0^2}\right)^{1/2} = \dfrac{\omega^2\eta}{2}\dfrac{1}{v^3_A}
+\end{equation*}
+For small \(\eta\), we have Re\((k)v_A \approx \omega\), this implies that
+\begin{equation*}
+	\text{Im}(k) \approx \dfrac{\text{Re}(k)^2\eta}{2v_A}.
+\end{equation*}
+
+
+
+
+
+

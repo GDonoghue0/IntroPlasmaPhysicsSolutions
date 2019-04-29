@@ -1,4 +1,4 @@
-\chapter*{Chapter Three}
+\chapter{Plasmas as Fluids}
 \label{ch:Three}
 
 \section*{Problem 3-1 (24)}
@@ -84,8 +84,6 @@ These can be combined to yield the final equation
 \end{equation*}
 The density profile over \(x \in (-a,a) \) is a quadratic with zeros at \(x=-a\) and \(x=a\), the maximum occurs at \(x=0\) and takes a value of \(n_0\); the diamagnetic drift velocity is upwards on the positive side of the plane and negative on the right side of the plane. 
 
-COME BACK TO DRAW PICTURE
-
 If we evaluate \(v_{D_e}\) at \(x = a/2\) we obtain \(v_{D_e} = 333 \)m/s.
 
 \section*{Problem 3-7 (30)}
@@ -114,12 +112,26 @@ Likewise, for the diamagnetic drift, we obtain
 \end{align*}
 which shows that the two drifts are indeed equal and opposite. Furthermore, we can see that the plasma rotates as a solid body by noting that since our drift velocities are in the \(\hat{\theta} \) direction and directly proportional to \(r\), we note that \(\omega \propto v_\theta/r \) and say that the rotation frequency is constant.
 
-Lastly, we note that 
+We note that 
 \begin{equation*}
 	v = v_\phi + v_E = \frac{1}{2}v_{D_e} + (-v_{D_e}) = \frac{1}{2}v_{D_e}
 \end{equation*}
-
-COME BACK TO DRAW PICTURE.
+A sketch of the relative magnitudes of velocities from the laboratory frame of reference are shown in the figure below
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}
+		\draw[thick] (0,0) circle (4cm);
+		\draw[-latex] (3.075,1.5) arc (30:90:4cm) node[near start,left] {\(v_{De}\)};
+		\draw[-latex] (3.075,-1.5) arc (-30:-90:4cm)  node[near start,left] {\(v_{E}\)};
+		\draw[-latex] (2.575,-1.25) arc (-30:-80:2cm)  node[near start,left] {\(v_{\phi}\)};
+		\node at (-2,-2) [circle,draw,inner sep=0pt,minimum width=0.75cm] {\(\cdot \)};
+		\node at (-1.45,-2) {\(B \)};
+		\draw[->, thick] (-1,0) -- (-3,0);
+		\node at (-2,0.5) {\(E\)};
+	\end{tikzpicture}
+	\caption{Relative magnitudes and directions of \(\bm{v}_E\), \(\bm{v}_{De}\), and \(\bm{v}_\phi\)}
+	\label{fig:3-7}
+\end{figure}
 
 \section*{Problem 3-8 (31)}
 \label{sec:3-8}

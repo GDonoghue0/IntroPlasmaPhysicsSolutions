@@ -1,0 +1,143 @@
+\chapter{Kinetic Theory}
+\label{ch:Seven}
+
+\section*{Problem 7-1 (86)}
+\label{sec:7-1}
+The Landau damping rate is given by
+\begin{equation*}
+	\text{Im}(\dfrac{\omega}{\omega_p}) = -0.22\sqrt{\pi}\left(\dfrac{\omega_p}{kv_\text{th}} \right)^3\exp\left(\dfrac{-1}{2k^2\lambda_D^2}\right).
+\end{equation*}
+We have
+\begin{equation*}
+	\omega_p = \left(\dfrac{ne^2}{m\epsilon_0}\right)^{1/2} = 17.84 \text{GHz},
+\end{equation*}
+\begin{equation*}
+	v_\text{th} = \left(\dfrac{2k_BT}{m}\right)^{1/2} = 1.876\times 10^6 \text{m/s},
+\end{equation*}
+\begin{equation*}
+	\lambda_D^2 = \dfrac{\epsilon_0k_BT}{ne^2} = 5.53 \times 10^{-9}\text{m}^{2}.
+\end{equation*}
+Combining all of these we obtain
+\begin{equation*}
+	\left|\text{Im}\left(\dfrac{\omega}{\omega_p}\right)\right| = 0.1358.
+\end{equation*}
+
+\section*{Problem 7-2 (87)}
+\label{sec:7-2}
+This problem is quite similar to the previous one, we first require the Landau damping rate, given by
+\begin{equation*}
+\text{Im}(\dfrac{\omega}{\omega_p}) = -0.22\sqrt{\pi}\left(\dfrac{\omega_p}{kv_\text{th}} \right)^3\exp\left(\dfrac{-1}{2k^2\lambda_D^2}\right).
+\end{equation*}
+We have
+\begin{equation*}
+	k = \dfrac{2\pi}{\lambda} = 628.3\text{m}^{-1},
+\end{equation*}
+\begin{equation*}
+\omega_p = \left(\dfrac{ne^2}{m\epsilon_0}\right)^{1/2} = 1.784 \text{GHz},
+\end{equation*}
+\begin{equation*}
+v_\text{th} = \left(\dfrac{2k_BT}{m}\right)^{1/2} = 1.876\times 10^6 \text{m/s},
+\end{equation*}
+\begin{equation*}
+\lambda_D^2 = \dfrac{\epsilon_0k_BT}{ne^2} = 5.52 \times 10^{-7}\text{m}^{2}.
+\end{equation*}
+These give a Landau damping factor of
+\begin{equation*}
+	\left|\text{Im}\left(\dfrac{\omega}{\omega_p}\right)\right| = 0.1363, \implies \left|\text{Im}\left(\omega\right)\right| = 0.243\text{GHz}.
+\end{equation*}
+In order to determine when the amplitude falls by a factor \(e\), we note that
+\begin{equation*}
+	\dfrac{E(t)}{E(0)} = e^{-|\text{Im}(\omega)|t},
+\end{equation*}
+and that this ratio is equal to \(1/e \) when \( t = \frac{1}{|\text{Im}(\omega)|} \).
+We therefore sat that after the excitation is removed, it takes \(t = 4.115\)ns for the amplitude to fall by a factor of \(e\).
+
+\section*{Problem 7-3 (88)}
+\label{sec:7-3}
+The general expression for a Maxwellian distribution centered at \(u_0\) is given by equation [1-2]
+\begin{equation*}
+	f(u) = n\sqrt{\dfrac{m}{2\pi k_BT}}\exp\left(-\dfrac{1}{2}m\left(u - u_0\right)^2/k_BT \right).
+\end{equation*}
+Knowing this, the expressions for \(f_p(v) \) and \(f_b(v)\) are
+\begin{equation*}
+	f_p(v) = \dfrac{n_p}{a\sqrt{\pi}}\exp\left(-\dfrac{v^2}{a^2} \right),
+\end{equation*}
+\begin{equation*}
+	f_b(v) = \dfrac{n_b}{b\sqrt{\pi}}\exp\left(-\dfrac{(v-V)^2}{b^2} \right).
+\end{equation*}
+In order to determine the phase velocity \(v_\phi \) we must optimize \(f'_b(v)\), this requires the first two derivatives of \(f_b\) with respect to \(v\)
+\begin{equation*}
+	f_b'(v) = \dfrac{n_b}{b\pi^{1/2}}\dfrac{-2(v-V)}{b^2}\exp\left(-\dfrac{(v-V)^2}{b^2} \right),
+\end{equation*}
+\begin{equation*}
+	f_b''(v) = \dfrac{-2n_b}{b^3\pi^{1/2}}\left[1 - \dfrac{2(v-V)}{b^2}\right]\exp\left(-\dfrac{(v-V)^2}{b^2} \right).
+\end{equation*}
+Setting the second derivative to zero requires
+\begin{equation*}
+	v - V = \pm \dfrac{b}{\sqrt{2}}, \implies v_\phi = V - \dfrac{b}{\sqrt{2}}.
+\end{equation*}
+This gives a value of the largest positive slope to be
+\begin{equation*}
+	f_b'(v_\phi) = \left(\dfrac{2}{\pi}\right)^{1/2}\dfrac{n_b}{b^2}e^{-1/2}.
+\end{equation*}
+Finding \(f_p'(v_\phi)\) is very straightforward 
+\begin{equation*}
+	f_p'(v) = \dfrac{n_p}{a\pi^{1/2}}\dfrac{-2v}{a^2}\exp\left(-\dfrac{v^2}{a^2} \right),
+\end{equation*}
+\begin{equation*}
+	f_p'(v_\phi) = \dfrac{n_p}{a\pi^{1/2}}\dfrac{-2}{a^2}\left(V - \dfrac{b}{\sqrt{2}}\right)\exp\left(-\dfrac{\left(V - b/\sqrt{2}\right)^2}{a^2} \right).
+\end{equation*}
+Assuming \(V \gg b\), our relation become
+\begin{equation*}
+	f_p'(v_\phi) = \dfrac{-2n_p}{a^3\pi^{1/2}}V\exp\left(-\dfrac{V^2}{a^2} \right).
+\end{equation*}
+Setting the slope of the total beam distribution function equal to zero gives
+\begin{equation*}
+	f_p'(v_\phi) + f_b'(v_\phi) = 0 \implies \left(\dfrac{2}{\pi}\right)^{1/2}\dfrac{n_b}{b^2}e^{-1/2} = \dfrac{2n_p}{a^3\pi^{1/2}}V\exp\left(-\dfrac{V^2}{a^2} \right).
+\end{equation*}
+We need now simply solve for the ratio of the beam to plasma densities
+\begin{equation*}
+	\dfrac{n_b}{n_p} = \sqrt{2e}\dfrac{b^2}{a^3}V\exp\left(-\dfrac{V^2}{a^2} \right).
+\end{equation*}
+By noting that \(\dfrac{b^2}{a^2} = \dfrac{T_b}{T_p} \), we obtain our desired relation
+\begin{equation*}
+	\dfrac{n_b}{n_p} = \sqrt{2e}\dfrac{T_b}{T_p}\dfrac{V}{a}\exp\left(-\dfrac{V^2}{a^2} \right).
+\end{equation*}
+
+\section*{Problem 7-8 (89)}
+\label{sec:7-8}
+We will assume \(k^2\lambda^2_D \ll 1 \) and invoke equation [7-128] to obtain
+\begin{equation*}
+	\sum_j\dfrac{n_{0j}}{n_{0e}}Z'\left(\dfrac{\omega}{kv_{\text{th}j}}\right) = \dfrac{2T_i}{T_e}.
+\end{equation*}
+Since we have an argon plasma with a hydrogen impurity, we assume
+\begin{equation*}
+	\dfrac{n_{0A}}{n_{0e}} = 1-\alpha \approx 1, \quad \dfrac{n_{0H}}{n_{0e}} = \alpha.
+\end{equation*}
+Doubling the Landau damping rate requires
+\begin{equation*}
+	\text{Im}Z'(\zeta_A) = \text{Im}Z'(\zeta_H), \text{ where } \text{Im}Z'(\zeta_j) = -2i\sqrt{\pi}\zeta_j\exp\left(-\zeta_j^2\right).
+\end{equation*}
+More explicitly, we say that doubling the Landau damping rate requires
+\begin{equation*}
+	\zeta_A\exp\left(-\zeta_A^2\right) = \alpha \zeta_H\exp\left(-\zeta_H^2\right),
+\end{equation*}
+solving for \(\alpha\) yields
+\begin{equation*}
+	\alpha = \dfrac{\zeta_A}{\zeta_H}\exp\left(-(\zeta_A^2 - \zeta_H^2\right)).
+\end{equation*}
+We note that since the atomic mass of argon is 40, we can say that
+\begin{equation*}
+\alpha = \sqrt{40}\exp\left(-(\zeta_A^2(1 - 1/40)\right)).
+\end{equation*}
+We now solve for \(\zeta_A \),
+\begin{equation*}
+	\zeta_A^2 = \dfrac{13}{2},
+\end{equation*}
+and determine that a hydrogen impurity density fraction of 
+\begin{equation*}
+	\alpha = \sqrt{40}\exp(-6.5(0.975)) = 0.012
+\end{equation*}
+will double the damping rate for the singly ionized argon plasma wave.
+
+

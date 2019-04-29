@@ -1,0 +1,196 @@
+\chapter{Equilibrium and Stability}
+\label{ch:Six}
+
+\section*{Problem 6-1 (80)}
+\label{sec:6-1}
+We can find the maximum containable plasma density by taking the limit of \(\beta \), as specified by the electromagnetic stability and solving for \(n\),
+\begin{equation*}
+	\beta = \left(\dfrac{m}{M}\right)^{1/2} = \dfrac{nk_BT_e + nk_BT_i}{B^2/(2\mu_0)}.
+\end{equation*}
+Rearranging for \(n\) and solving gives
+\begin{equation*}
+	n = \dfrac{B^2}{2\mu_0}\left(\dfrac{m}{M}\right)^{1/2}\left(k_BT_e + k_BT_i\right)^{-1} = 5.8\times 10^{-3}.
+\end{equation*}
+This is the maximum plasma density that can be contained by the reactor.
+
+\section*{Problem 6-2 (81)}
+\label{sec:6-2}
+For part (a) we will take \(\tau_{ei} = \nu_{ei}^{-1} \), where
+\begin{equation*}
+	\nu_{ei} = \dfrac{ne^2}{m}\eta, \quad \eta = \dfrac{\pi e^2 m^{1/2}}{(4\pi \epsilon_0)^2 (k_BT_e)^{3/2}}\ln(\Lambda) = 0.9695\text{n}\Omega\text{m}.
+\end{equation*}
+This yields
+\begin{equation*}
+	\nu_{ei} = 27.32\text{GHz} \implies \omega_c\tau_{ei} = \dfrac{10^{27}\text{m}^{-3}1.602\times10^{-19}\text{C}}{9.109\times10^{-31}\text{kg}}3.66 \times 10^{-11}\text{s} = 6332 \gg 1.
+\end{equation*}
+This shows that electron motion is significantly affected by the magnetic field. For part (b), we have 
+\begin{equation*}
+	\beta = \dfrac{2nk_BT}{B^2/(2\mu_0)} = 8.05 > 1,
+\end{equation*}
+which shows that the magnetic fields are incapable of confining the plasma. %In order to reconcile these two findings, we note that the plasma will move along the lines of force and the plasma will not be contained. 
+
+\section*{Problem 6-4 (82)}
+\label{sec:6-4}
+The relevant MHD equations describing \(\bm{j}_\perp \) in steady state is given by equation [6-3]
+\begin{equation*}
+	\bm{j}_\perp = (k_BT_e + k_BT_i)\dfrac{\bm{B}\times \nabla n}{B^2} = \dfrac{\Sigma k_BT}{B}\pp{n}{r}\hat{\theta}.
+\end{equation*}
+Where we have appealed to the symmetry of the problem to obtain the form of the gradient of \(n\). Integrating the relation \(\nabla \times \bm{B} = \mu_0 \bm{j} \) over the area of the loop and applying Stokes' theorem to the left hand side yields
+\begin{equation*}
+	\oint \bm{B} \cdot ds = \mu_0 \iint \bm{j} \cdot dA.
+\end{equation*}
+Since we used equation [6-3] in part (a) we appeal to the fact that \(k_BT = \nabla n \times \bm{B} = \bm{B}\left(\bm{j}\cdot\bm{B} \right) - \bm{j}B^2 \), which implies that \(j_\parallel \) is 0. From here, note that \(\bm{j}\) and \(dA\) are in the same direction and arrive at
+\begin{equation*}
+	\oint \bm{B} \cdot ds = \mu_0 \iint \bm{j} \cdot dA = \mu_0 L \int_0^\infty j_\theta dr.
+\end{equation*}
+Noting that the symmetry of the problem requires \(B_r = 0\), we can substitute \(j_\theta \) to obtain our desired expression
+\begin{equation*}
+	B_{ax} - B_0 = \mu_0 k_BT\int_0^\infty \dfrac{\partial n / \partial r}{B(r)}dr.
+\end{equation*}
+Finally, we note that by taking \(\pp{n}{r} = -n_0\delta(r-a) \), (the sign indicates the density decreases outside the cylinder) our integral moves to a more tractable form
+\begin{equation*}
+	B_{ax} - B_0 = \mu_0 k_BT\int_0^\infty \dfrac{n_0\delta(r-a)}{B(r)}dr.
+\end{equation*}
+What we require now is an expression for \(B(r)\). In order to go about this we will simply assume the fields outside the cylinder and inside the cylinder are constant near the boundary and then take the average, this gives \(B(r) = 1/2(B_{ax} + B_0) \). This yields
+\begin{equation*}
+	B_{ax} - B_0 = \mu_0 k_BT\dfrac{-n_0}{\frac{1}{2}(B_{ax} + B_0)}
+\end{equation*}
+\begin{equation*}
+	B_{ax}^2 - B_0^2 = -2n_0\mu_0 k_BT
+\end{equation*}
+\begin{equation*}
+	1 - \dfrac{B_{ax}^2}{B_0^2} = \dfrac{2n_0\mu_0 k_BT}{B_0^2} \equiv \beta.
+\end{equation*}
+Using the definition of \(\beta \) it is clear that if we have our magnetic field vanish at the axis then \(B_{ax} = 0 \) and \(\beta\) = 1.
+
+\section*{Problem 6-5 (83)}
+\label{sec:6-5}
+Using the fundamental theorem of calculus, the fact that the flux is proportional to the number of loops in the diamagnetic loop \(N\) and Faraday's law (\(V = -\dd{\Phi}{t}  \)) we can say that 
+\begin{equation*}
+	\int V dt = -N\int\dd{\Phi}{t}dt = -N\Delta\Phi.
+\end{equation*}
+If we take the change in flux (\(\Delta\Phi \)) to be equal to the change in \(B\) as described by the problem we obtain
+\begin{equation*}
+	-N\Delta\Phi = -N\int(B - B_0)\cdot d\bm{S}.
+\end{equation*}
+Secondly, as per our previous problem, we now update our loop so that it begins at an arbitrary position away from the axis
+\begin{equation*}
+	B(r) - B_0 = \mu_0k_BT\int_r^\infty\dfrac{\partial n/\partial r}{B(r')}dr' \approx \mu_0k_BT\int_r^\infty\dfrac{\partial n/\partial r}{B_0}dr'
+\end{equation*}
+Our expression for \(\pp{n}{r} \) is 
+\begin{equation*}
+	\pp{n}{r} = n_0\left(\dfrac{-2r}{r^2_0} \right) e^{-r^2/r_0^2}.
+\end{equation*}
+Substituting this into our integral gives
+\begin{equation*}
+	B(r) - B_0 = \dfrac{\mu_0k_BT}{B_0}\int_r^\infty n_0\left(\dfrac{-2r}{r^2_0} \right) e^{-r^2/r_0^2}dr' = \dfrac{-\mu_0n_0k_BT}{B_0}e^{-r^2/r_0^2}.
+\end{equation*}
+We must now integrate this expression over the loop area to obtain
+\begin{equation*}
+	\int_\text{loop} V dt = -N\iint(B(r) - B_0)\cdot dA = -N\iint \left(B(r) - B_0\right)rdrd\theta.
+\end{equation*}
+Using our expression for \(\bm{B}_d \) we get
+\begin{equation*}
+	\int_\text{loop} V dt = -N\iint \left( \dfrac{-\mu_0n_0k_BT}{B_0}e^{-r^2/r_0^2}\right)rdrd\theta = N\pi\dfrac{\mu_0n_0k_BT}{B_0}r_0^2\left[e^{-2^2/r_0^2}\right]^0_\infty.
+\end{equation*}
+This yields the final expression
+\begin{equation*}
+	\int_\text{loop} V dt = \dfrac{1}{2}N\pi r^2_0\left(\dfrac{2\mu_0n_0k_BT}{B_0^2}\right)B_0 = \dfrac{1}{2}N\pi r^2_0\beta B_0.
+\end{equation*}
+Where in the last equation we simply use the definition of \(\beta \).
+
+\section*{Problem 6-6 (84)}
+\label{sec:6-6}
+The linearized equations of motion for each stream is given by
+\begin{equation*}
+	m\left(\pp{\bm{v}_1}{t} + \bm{v}_0\cdot\nabla \bm{v}_1 \right) = m(-i\omega + ikv_0)\bm{v}_1 = -e\bm{E}_1.
+\end{equation*}
+This yields a useful expression for \(\bm{v}_1 \):
+\begin{equation*}
+	\bm{v}_1 = \dfrac{-ie\bm{E}_1}{m(\omega - kv_0)}.
+\end{equation*}
+The linearized continuity equation states that 
+\begin{equation*}
+	(-i\omega + ikv_0)n_1 + ikn_0v_1 = 0,
+\end{equation*}
+this gives an expression for \(n_1\):
+\begin{equation*}
+	n_1 = n_0 \dfrac{kv_1}{\omega-kv_0}.
+\end{equation*}
+Combining our equations for \(n_1\) and \(v_1\) we obtain the following relation that both streams must satisfy
+\begin{equation*}
+	n_1 = n_0\dfrac{-ikE_1e}{m(\omega - kv_0)^2}.
+\end{equation*}
+In this situation, the Poisson equation states that 
+\begin{equation*}
+	ikE_1 = \dfrac{e}{\epsilon_0}\left(n_{1a} + n_{1b}\right).
+\end{equation*}
+Therefore, using the fact that \(v_{0a} = -v_{0b} = v_0 \), we have
+\begin{equation*}
+	ikE_1 = -\dfrac{e}{\epsilon_0}\dfrac{-ikeE_1}{m}\left(\dfrac{\frac{1}{2}n_0}{(\omega + kv_0)^2} + \dfrac{\frac{1}{2}n_0}{(\omega - kv_0)^2}\right),
+\end{equation*}
+\begin{equation*}
+	1 = \dfrac{n_0e^2}{2m\epsilon_0}\left(\dfrac{1}{(\omega + kv_0)^2} + \dfrac{1}{(\omega - kv_0)^2}\right).
+\end{equation*}
+Noting that the plasma frequency can be expressed as \(\dfrac{n_0e^2}{m\epsilon_0} = \omega_p^2 \), we obtain
+\begin{equation*}
+1 = \dfrac{1}{2}\omega_p^2\left(\dfrac{1}{(\omega + kv_0)^2} + \dfrac{1}{(\omega - kv_0)^2}\right),
+\end{equation*}
+which is the dispersion relation for a two stream instability occurring when there are two fixed cold electron streams traveling in opposite directions.
+
+To determine the maximum growth rate, we seek an expression for Im(\(\omega\)); to do so, we simply need rearrange our dispersion relation from part (a) into a more manageable form
+\begin{equation*}
+	1 = \dfrac{1}{2}\omega_p^2\left(\dfrac{1}{(\omega + kv_0)^2} + \dfrac{1}{(\omega - kv_0)^2}\right),
+\end{equation*}
+\begin{equation*}
+	1 = \omega_p^2\dfrac{\omega^2 + k^2v_0^2}{(\omega^2 - k^2v_0^2)^2}
+\end{equation*}
+\begin{equation*}
+	\omega^4 - (\omega_p^2 + 2k^2v_0^2)\omega^2 + k^2v_0^2(k^2v_0^2 - \omega_p^2) = 0.
+\end{equation*}
+This last equation is a biquadratic equation in \(\omega\), we can define
+\begin{equation*}
+	x = \dfrac{2k^2v_0^2}{\omega_p^2}, \quad y = \dfrac{2\omega^2}{\omega_p^2}.
+\end{equation*}
+This yields
+\begin{equation*}
+	y^2 = 1 + x \pm (1 + 4x)^{1/2}.
+\end{equation*}
+We note that if we take the sign to be positive then our \(\omega \) is purely real. We therefore have
+\begin{equation*}
+	y^2 = 1 + x - (1 + 4x)^{1/2},
+\end{equation*}
+and some straightforward algebra implies that our maximum growth rate is
+\begin{equation*}
+	-iy = \dfrac{1}{2} = \dfrac{\sqrt{2}\text{Im}(\omega)}{\omega_p}, \quad \text{Im}(\omega) = \dfrac{\omega_p}{2^{3/2}}.
+\end{equation*}
+
+\section*{Problem 6-8 (85)}
+\label{sec:6-8}
+This situation is nearly identical to the one described in section 6.6, where the dispersion relation was found to be
+\begin{equation*}
+	1 = \omega_p^2\left[\dfrac{m/M}{\omega^2} + \dfrac{1}{(\omega - kv_0)^2}\right].
+\end{equation*}
+For this problem, we must however update our reference frame to  move with velocity \(u\), and include an updated density term for \(n_{e_1} = \delta n_0\). This yields the dispersion relation
+\begin{equation*}
+	1 = \omega_p^2\left[\dfrac{m}{M\omega^2} + \dfrac{\delta}{(\omega - ku)^2}\right].
+\end{equation*}
+I think I'll come back to this one ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

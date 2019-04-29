@@ -1,12 +1,12 @@
-\chapter*{Chapter Two}
+\chapter{Single-Particle Motions}
 \label{ch:Two}
 
 \section*{Problem 2-1 (11)}
 \label{sec:2-1}
 The Larmor radius for each situation is given by 
-\begin{equation}
+\begin{equation*}
 	r_L \equiv \dfrac{mv_\perp}{|q|B} = \dfrac{\sqrt{2mE}}{|q|B},
-\end{equation}
+\end{equation*}
 this yields
 \begin{itemize}
 	\item[(a)] \(r_L = 6.75\text{m} \)
@@ -18,198 +18,198 @@ this yields
 \section*{Problem 2-2 (12)}
 \label{sec:2-2}
 The maximum Larmor radius will occur when \(v_\perp \gg v_\parallel \), therefore, we say that \(v_\perp = \sqrt{\dfrac{2E}{m}} \), where since we are considering Deuterium \(m = 2m_p\). The maximum Larmor radius is therefore
-\begin{equation}
+\begin{equation*}
 	r_L = \dfrac{mv_\perp}{eB} = 0.0183\text{m}.
-\end{equation} 
+\end{equation*} 
 Since the maximum Larmor radius is less than the minor radius of the toroidal plasma (\(a = 0.6m\)), we say that the particle is confined.
 
 \section*{Problem 2-3 (13)}
 \label{sec:2-3}
 We have
-\begin{align}
+\begin{align*}
 	v_{\perp gc} &= \dfrac{\vec{\textbf{E}}\times\vec{\textbf{B}}}{B^2} \\ 
 	v_y &= \dfrac{E_x}{B} \implies
 	E = v_yB = 1\text{MV/m}.
-\end{align}
+\end{align*}
 There must therefore be an internal electrical field of one megavolt per meter in order to propel the ion engine. 
 
-\section*{Problem 2-4}
-\label{sec:2-4}
-I don't want to include the diagram in Latex, so I'll skip this one. 
+%\section*{Problem 2-4}
+%\label{sec:2-4}
+%I don't want to include the diagram in Latex, so I'll skip this one. 
 
 \section*{Problem 2-5 (14)}
 \label{sec:2-5}
 Since the electrons in our cylindrically symmetric plasma column obey a Boltzmann relation we can say that
-\begin{equation}
+\begin{equation*}
 	n = n_0\exp{-q_e\phi/k_BT_e}.
-\end{equation}
+\end{equation*}
 Rearranging this equation for \(\phi \) gives
-\begin{equation}
+\begin{equation*}
 	\phi = \dfrac{k_BT_e}{e}\log(\dfrac{n}{n_0}).
-\end{equation}
+\end{equation*}
 Using our assumption that \(\pp{n}{r} \approx -\dfrac{n}{\lambda} \), we can obtain the radial electric field by taking the negative gradient of our potential
-\begin{align}
+\begin{align*}
 	\textbf{E} =& -\nabla \phi\\
 	=& -\dfrac{k_BT_e}{e}\dfrac{1}{n}\pp{n}{r}\hat{\textbf{r}} \\
 	\approx& -\dfrac{k_BT_e}{e}\dfrac{1}{n}\left(-\dfrac{n}{r}\right)\hat{\textbf{r}} \\
 	=& \dfrac{k_BT_e}{e\lambda}\hat{\textbf{r}}.
-\end{align}
+\end{align*}
 
 In order to show that if the finite Larmor radius effects are large if \(v_E\) is large we will take \(v_E = v_\text{th} \), we say that our \(v_E\) is given by
-\begin{equation}
+\begin{equation*}
 	v_E = \dfrac{E}{B}\hat{\bm{\theta}} = \dfrac{k_BT_e}{eB\lambda}\hat{\bm{\theta}}.
-\end{equation}
+\end{equation*}
 We also know that \(v_\text{th} \) is given by 
-\begin{equation}
+\begin{equation*}
 	v_\text{th} = \sqrt{\dfrac{2k_BT_e}{m}}.
-\end{equation}
+\end{equation*}
 By taking \(v_E = v_\text{th} \) we obtain the relation
-\begin{align}
+\begin{align*}
 	v_E =& v_\text{th}\\
 	\dfrac{k_BT_e}{eB\lambda} =& \sqrt{\dfrac{2k_BT_e}{m}}\\
 	\lambda^2 =& \dfrac{k_BT_em}{2e^2B^2}.
-\end{align}
+\end{align*}
 In order to find an expression for \(v_\text{th}\) that relates to our Larmor radius, we note that since \(v_\perp\) contains two degrees of freedom we can take
-\begin{equation}
+\begin{equation*}
 	\dfrac{1}{2}m\bar{v}_\perp^2 = 2\times\dfrac{1}{2}k_BT_e.
-\end{equation}
+\end{equation*}
 This implies that 
-\begin{equation}
+\begin{equation*}
 	\bar{v}_\perp = \left(2k_BT_e/m\right)^{1/2} = v_\text{th}.
-\end{equation}
+\end{equation*}
 We may therefore say that if \(\bar{v}_\perp = v_\text{th} = v_E \) we have
-\begin{align}
+\begin{align*}
 	r_L =& \dfrac{m}{eB} v_E \\
 	=& \dfrac{m}{eB} \left(\dfrac{k_BT_e}{eB\lambda}\right) \\
 	=& \dfrac{k_BT_em}{e^2B^2} \left(\dfrac{1}{\lambda}\right) \\
 	=& 2\lambda^2 \left(\dfrac{1}{\lambda}\right) \\
 	=& 2\lambda \\
-\end{align}
+\end{align*}
 Which is the relation we desire; it shows that finite Larmor radius effects are large if the electric field drift is as large as the thermal velocity.
 
 Lastly, we note that if we were to consider ions rather than electrons and note that due to our assumptions about the electron distribution and the inertia of the ions, the electric field would depend on \(T_e\), while the thermal velocity would be given by
-\begin{equation}
+\begin{equation*}
 	v_\text{th} = \sqrt{\dfrac{2k_BT_i}{M}}.
-\end{equation}
+\end{equation*}
 Equating our velocities will then give
-\begin{equation}
+\begin{equation*}
 	\lambda^2 = \dfrac{k_BT_e^2M}{2e^2B^2T_i},
-\end{equation}
+\end{equation*}
 which will be equal to the electron case when \(T_e = T_i\). We therefore say that the finite Larmor radius effects for ion are large when the thermal and electrical velocities are equal and the ion temperature is equal to (or approximately equal to) the electron temperature.
 
 \section*{Problem 2-6 (15)}
 \label{sec:2-6}
 To begin we equate the experimentally determined density profile with the Boltzmann relation; our ultimate goal is to obtain an expression for the electric field drift of the guiding center, we begin with
-\begin{align}
+\begin{align*}
 	n_0\exp(e^{-r^2/a^2} - 1) =& n_0\exp(-q\phi/k_BT)\\
 	e^{-r^2/a^2} - 1 =& -q\phi/k_BT
-\end{align}
+\end{align*}
 then we note that
-\begin{equation}
+\begin{equation*}
 	\phi = \dfrac{k_BT}{-q}\left(e^{-r^2/a^2}-1\right).
-\end{equation}
+\end{equation*}
 From here, we calculate the electric field by taking the negative gradient of our potential
-\begin{align}
+\begin{align*}
 	\textbf{E} = -\nabla \phi =& -\pp{\phi}{r}\hat{\textbf{r}} \\
 	=& \dfrac{k_BT}{q} \dfrac{-2r}{a^2} e^{-r^2/a^2} \hat{\textbf{r}}.
-\end{align}
+\end{align*}
 Determining where \(v_E\) is largest corresponds to finding where \(\textbf{E}\) is largest, this is a straightforward optimization problem
-\begin{align}
+\begin{align*}
 	\dd{E_r}{r} = \dfrac{2k_BT}{ea^2}\left(1 - \dfrac{2r^2}{a^2} \right)e^{-r^2/a^2} = 0 \implies r = \dfrac{a}{\sqrt{2}}.
-\end{align}
+\end{align*}
 The maximum electric field drift of our guiding center will therefore be
-\begin{align}
+\begin{align*}
 	\textbf{v}_E = -\dfrac{E_r|_{r = a/\sqrt{2}}}{B} \hat{\bm{\theta}} = -\dfrac{k_BT}{qB}\dfrac{\sqrt{2}}{a}e^{-1/2} = \dfrac{17\text{N}/\text{C}}{0.2\text{T}} = 8500\text{m/s}
-\end{align}
+\end{align*}
 
 This can be compared with the drift from the Earth's gravitational field by noting that 
-\begin{equation}
+\begin{equation*}
 	\dfrac{|\textbf{v}_E|}{|\textbf{v}_g|} = \dfrac{eE_\text{max}}{mg} \approx 4\times 10^6,
-\end{equation}
+\end{equation*}
 we note that the maximum electric drift velocity is about four million times larger than the drift from gravity.
 
 Lastly, we note that we can solve for the minimum magnetic field strength by taking
-\begin{align}
+\begin{align*}
 	r_L =& \dfrac{M}{eB} v_\perp \\
 		=& \dfrac{M}{eB} \sqrt{\dfrac{2k_BT}{M}} \\
 	B	=& \dfrac{M}{er_L} \sqrt{\dfrac{2k_BT}{M}} \\
 	=& 4.00 \times 10^{-2}\text{T},
-\end{align}
+\end{align*}
 we note that a magnetic field strength of \(40\) milliTesla will cause potassium ions to have a Larmor radius equal to \(a\).
 
 \section*{Problem 2-7 (16)}
 \label{sec:2-7}
 By applying Gauss' law for a uniform cylinder, we know that the electric field is given by
-\begin{equation}
+\begin{equation*}
 	E = \dfrac{en_e\pi a^2}{2\pi \epsilon_0 a} = \dfrac{en_e a}{2 \epsilon_0},
-\end{equation}
+\end{equation*}
 with \(en_e\pi a^2\) being the charge density per unit length. We can therefore calculate the electric drift to be
-\begin{equation}
+\begin{equation*}
 	v_E = \dfrac{E}{B} = \dfrac{9.04 \times 10^3 \text{V/m}}{0.2\text{T}} = 4.52 \times 10^3 m/s.
-\end{equation}
+\end{equation*}
 
 \section*{Problem 2-8 (17)}
 \label{sec:2-8}
 To begin, we note the relevant expressions for the magnetic field and its gradient can be taken as
-\begin{equation}
+\begin{equation*}
 	\textbf{B} = \dfrac{B_0}{r^3}, \quad \nabla\textbf{B} = -3\dfrac{B_0}{r^4}\hat{\textbf{r}}.
-\end{equation}
+\end{equation*}
 We also note that we can express \(\dfrac{1}{2} v_\perp r_L \) as
-\begin{equation}
+\begin{equation*}
 \dfrac{1}{2} v_\perp r_L = \dfrac{m_jv_\perp^2}{q_jB} = \dfrac{k_BT_j}{q_jB},
-\end{equation}
+\end{equation*}
 where the subscript \(j\) represents either ions or electrons. At the equator, \(\textbf{B}\) and \(\nabla\textbf{B} \) are perpendicular, so we can take
-\begin{align}
+\begin{align*}
 	v_{\nabla B} = \dfrac{1}{2} v_\perp r_L \dfrac{\textbf{B} \times \nabla \textbf{B}}{|B|^2} = \dfrac{k_BT_j}{eB}\dfrac{3}{r}.
-\end{align}
+\end{align*}
 This gives the following for the electron and ion magnetic gradient drift speeds
-\begin{equation}
+\begin{equation*}
 	v_{\nabla B}^i = 0.39\text{m/s}, \quad v_{\nabla B}^e = 1.17\text{m/s}.
-\end{equation}
+\end{equation*}
 
 A simple application of the right-hand rule shows that electrons will drift eastward while ions will drift westward. 
 
 Given a speed of \(v_{\nabla B}^e = 1.17\text{m/s} \) one can divide the circumference of the Earth by this to obtain \(t = \dfrac{C_E}{v_{\nabla B}} = 4.8\text{hrs}\).
 
 Lastly, if we neglect ions we obtain a drift current of
-\begin{equation}
+\begin{equation*}
 	j = \rho v = nev_{\nabla B} = 1.87 \times 10^{-8} \dfrac{\text{A}}{\text{m}^2}
-\end{equation}
+\end{equation*}
 
-\section*{Problem 2-9}
-\label{sec:2-9}
-Looks hard \dots
+%\section*{Problem 2-9}
+%\label{sec:2-9}
+%Looks hard \dots
 
 \section*{Problem 2-10 (18)}
 \label{sec:2-10}
 If the deuteron is at a pitch angle of \(45^\circ \) then we can say that
-\begin{equation}
+\begin{equation*}
 	v_\perp = v\cos(45^\circ) = \sqrt{\dfrac{2k_BT}{2m}} = 9.8 \times 10^{-5}\text{m}.
-\end{equation}
+\end{equation*}
 The Larmor radius is therefore given by
-\begin{equation}
+\begin{equation*}
 	r_L = \dfrac{m_d v_\perp}{qB} = 0.03\text{m}.
-\end{equation}
+\end{equation*}
 
 \section*{Problem 2-11 (19)}
 \label{sec:2-11}
 Firstly we note that having a mirror ratio of \(R_m = 4\) implies that the loss cone has a pitch angle of \(\theta_m = \dfrac{\pi}{6} \), i.e.
-\begin{equation}
+\begin{equation*}
 	\sin^2(\theta_m) = \dfrac{1}{R_m} \implies \sin(\theta_m) = \dfrac{1}{2} \implies \theta_m = \dfrac{\pi}{6}.
-\end{equation}
+\end{equation*}
 Following this, we assume that the velocity is distributed isotropically and determine the fraction of space this cone takes to be
-\begin{equation}
+\begin{equation*}
 	L = \dfrac{2\int_0^{2\pi}\int_0^{\pi/6}\sin(\theta)d\theta d\phi}{\int_0^{2\pi}\int_0^{\pi}\sin(\theta)d\theta d\phi} = 1-\dfrac{\sqrt{3}}{2} = 0.134.
-\end{equation}
+\end{equation*}
 We therefore say that \(86.6\% \) of the particles in the plasma are trapped outside the loss cone.
 
-\section*{Problem 2-12}
-\label{sec:2-12}
-Looks hard \dots
-
-\section*{Problem 2-13}
-\label{sec:2-13}
-Related to above \dots
+%\section*{Problem 2-12}
+%\label{sec:2-12}
+%Looks hard \dots
+%
+%\section*{Problem 2-13}
+%\label{sec:2-13}
+%Related to above \dots
 
 \section*{Problem 2-14 (20)}
 \label{sec:2-14}
@@ -218,21 +218,21 @@ As the magnetic field \textbf{B} increases Faraday's law of induction (\(\nabla 
 \section*{Problem 2-15 (21)}
 \label{sec:2-15}
 The work done by the \textbf{E} drift in \textbf{E} direction will be given by the product of the electric force and the distance traveled, i.e.
-\begin{equation}
+\begin{equation*}
 	W = q\textbf{E}\cdot\Delta\textbf{x}.
-\end{equation}
+\end{equation*}
 Furthermore, the kinetic energy from the electric field will be given by
-\begin{equation}
+\begin{equation*}
 	E = \dfrac{1}{2}mv_E^2.
-\end{equation}
+\end{equation*}
 In order to obtain an expression for \(v_p\), we will invoke conservation of energy as follows
-\begin{align}
+\begin{align*}
 	\dd{W}{t} =& \dd{E}{t}\\
 	q\textbf{E}\cdot\dd{\Delta\textbf{x}}{t} =& mv_E\dd{v_E}{t} \\
 	qEv_p =& m\dfrac{E}{B}\dfrac{1}{B}\dd{E}{t} \\
 	v_p =& \dfrac{m}{qB^2}\dd{E}{t} \\
 	v_p =& \pm\dfrac{1}{\omega_cB}\dd{E}{t},
-\end{align}
+\end{align*}
 which is the desired expression for the polarization drift.
 
 \section*{Problem 2-16 (22)}
