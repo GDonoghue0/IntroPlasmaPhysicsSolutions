@@ -20,5 +20,213 @@ We therefore say that the approximate plasma density as determined by the probe 
 	n_0 = 7.10\times 10^{16}\text{m}^{-3}.
 \end{equation*}
 
-%\section*{Problem 8-2 (91)}
-%\label{sec:8-2}
+\section*{Problem 8-4 (91)}
+\label{sec:8-4}
+We note that the Child-Langmuir law (equation [8-18])
+\begin{equation*}
+	J = \dfrac{4}{9}\left(\dfrac{2e}{M}\right)^{1/2}\dfrac{\epsilon_0\left|\phi_w\right|^{3/2}}{d^2},
+\end{equation*}
+applied to the region between grids 2 and 3 yields a maximum meaningful He\(^+\) current of
+\begin{equation*}
+	J = \dfrac{4}{9}\left(\dfrac{2(1.602\times 10^{-19}\text{C})}{4\times 1.67 \times 10^{-27}\text{kg}}\right)^{1/2} \dfrac{\epsilon_0\left|100\text{V}\right|^{3/2}}{(1\text{mm})^2} = 27.2\text{A/m}.
+\end{equation*}
+The total current is given by
+\begin{equation*}
+	I = JA = J\pi\left(\dfrac{d}{2}\right)^2 = 0.34\text{mA}.
+\end{equation*}
+
+\section*{Problem 8-6 (92)}
+\label{sec:8-6}
+Starting from the equation for the ponderomotive force (equation [8-44])
+\begin{equation*}
+	\bm{F}_{\text{NL}} = -\dfrac{\omega_p^2}{\omega^2}\nabla\dfrac{\left<\epsilon_0\bm{E}^2\right>}{2},
+\end{equation*}
+we note that at the region of critical density, this becomes
+\begin{equation*}
+	\bm{F}_{\text{NL}} = -\nabla\dfrac{\left<\epsilon_0\bm{E}^2\right>}{2},
+\end{equation*}
+and by taking the hint from the question we will take the gradient to be equal to the recipricol of the length, which will cancel, i.e.
+\begin{equation*}
+	F_{\text{NL}} = -\dfrac{\left<\epsilon_0{E}^2\right>}{2L}.
+\end{equation*}
+Next, to calculate \( \left<\epsilon_0{E}^2\right> \) we will set the Poynting flux \(P/A\), equal to the energy density of the beam times its group velocty in vacuum \(c\), where we have assumed the vaccuum approximation holds. This is to say 
+\begin{equation*}
+	\dfrac{P}{A} = c\left<\epsilon_0{E}^2\right>, 
+\end{equation*}
+with \(P\) being the power of the beam and \(A\) being its area. Since we seek the effective pressure of the beam, we note that 
+\begin{equation*}
+	p = \dfrac{1}{2}\epsilon_0\left<E^2\right>,
+\end{equation*}
+and finally we can say that
+\begin{equation*}
+	p = \dfrac{P}{2cA} = 8.50\times 10^{11}\text{N/m}^2 = 1.23 \times 10^{8}\text{lb/in}^2.
+\end{equation*}
+Which is the effective pressure exerted by the ponderomotive force of the laser.
+For part (b), the force can be determined by simply taking the product of the above pressure with the area
+\begin{equation*}
+	F = pA = 1667N = 0.17\text{tonnes}.
+\end{equation*}
+Lastly, to determine the density jump, we will assume the plasma behaves as an ideal gas and state that 
+\begin{equation*}
+	2nk_BT = p \implies n = \dfrac{p}{2k_BT} = 2.66\times 10^{27}\text{m}^{-3}.
+\end{equation*}
+
+\section*{Problem 8-7 (93)}
+\label{sec:8-7}
+Taking a force balance, we have
+\begin{equation*}
+	\bm{F}_\text{NL} = \nabla p,
+\end{equation*}
+\begin{equation*}
+	-\dfrac{\omega_p^2}{\omega^2}\nabla\dfrac{\left<\epsilon_0\bm{E}^2\right>}{2} = \nabla nk_BT.
+\end{equation*}
+Since the intensity profile and and density depression are being equated, only the \(r\) direction is relevant
+\begin{equation*}
+	-\dfrac{\omega_p^2}{\omega^2}\pp{}{r}\dfrac{\left<\epsilon_0\bm{E}^2\right>}{2} = k_BT\pp{n}{r}.
+\end{equation*}
+Since we have an underdense plasma, we take
+\begin{equation*}
+	n_c = \dfrac{\epsilon_0m\omega^2}{e^2}, \implies \omega^2 = \dfrac{n_ce^2}{\epsilon_0 m}, \implies \dfrac{\omega^2_p}{\omega^2} = \dfrac{n}{n_c}.
+\end{equation*}
+We now have
+\begin{equation*}
+	\dfrac{1}{n}\pp{n}{r} = - \dfrac{\epsilon_0}{2n_ck_BT}\pp{}{r}\left<E^2\right>,
+\end{equation*}
+integrating this equation yields
+\begin{equation*}
+	\ln (n) = -\dfrac{\epsilon_0\left<E^2\right>}{2n_ck_BT} + \ln(n_0),
+\end{equation*}
+and taking the exponential of this provides our desired relation
+\begin{equation*}
+	n = n_0\exp\left(-\epsilon_0\left<E^2\right>/2n_ck_BT \right) = n_0\exp(-\alpha(r)).
+\end{equation*}
+
+\section*{Problem 8-9 (94)}
+\label{sec:8-9}
+Using equation [4-41] for the speed of sound in a plasma
+\begin{equation*}
+	\dfrac{\omega}{k} = \left(\dfrac{k_BT_e + \gamma_ik_BT_i}{M}\right)^{1/2} \equiv v_s,
+\end{equation*}
+and the assumption that \(\omega^2_p \ll \omega^2 \), we seek to estimate the ion temperature \(T_i\). We note that the change in the frequency of the ion wave after being red-shifted is
+\begin{equation*}
+	\omega_i = \Delta\omega = \dfrac{\omega_0}{\lambda_0}\Delta\lambda  = \dfrac{2\pi c}{\lambda^2_0}\Delta\lambda = 3.67\times 10^{12}\text{Hz}.
+\end{equation*}
+Equating this with the frequency obtained from equation [4-41] gives
+\begin{equation*}
+	\omega_i^2 = (k_iv_s)^2 = \dfrac{k_BT_e + \gamma_ik_BT_i}{M},
+\end{equation*}
+\begin{equation*}
+	\dfrac{M\omega_i^2}{k_B} = T_e + \gamma_iT_i,
+\end{equation*}
+\begin{equation*}
+	\dfrac{1}{\gamma_i}\left(\dfrac{M\omega_i^2}{k_B} - T_e\right) = T_i.
+\end{equation*}
+\begin{equation*}
+	\dfrac{1}{3}\left(2\text{keV} - 1\text{keV}\right) = T_i.
+\end{equation*}
+This provides an estimate of \(T_i = \frac{1}{3}\)keV.
+
+\section*{Problem 8-13 (95)}
+\label{sec:8-13}
+The ion equation of motion in the presence of a ponderomotive force is given by
+\begin{equation*}
+	Mn_0\pp{v}{t} = en_0E - \gamma_ik_BT_i\nabla n - Mn_0\nu v + F_\text{NL}.
+\end{equation*}
+Assuming sinusoidally behaving quantities we have
+\begin{equation*}
+Mn_0(-i\omega + \nu)v = en_0(-ik\phi) - \gamma_ik_BT_iikn_1 n + F_\text{NL}.
+\end{equation*}
+If we also assume that the density follows the Boltzmann relation, then expand this relation, we have
+\begin{equation*}
+	n_1 = n_0\exp(e\phi/k_BT_e), \implies \dfrac{e\phi}{k_BT_e} \approx \dfrac{n_1}{n_0}.
+\end{equation*}
+This simplifies our ion equation of motion to
+\begin{equation*}
+	(\omega + i\nu)v = kv_s^2\dfrac{n_1}{n_0} + \dfrac{iF_\text{NL}}{Mn_0}.
+\end{equation*}
+\begin{equation*}
+	v = (\omega + i\nu)^{-1}\left[kv_s^2\dfrac{n_1}{n_0} + \dfrac{iF_\text{NL}}{Mn_0}\right].
+\end{equation*}
+Likewise, our ion continuity equation is
+\begin{equation*}
+	0 = -i\omega n_1 + ikn_0 v = -i\omega n_1 + ikn_0(\omega + i\nu)^{-1}\left[kv_s^2\dfrac{n_1}{n_0} + \dfrac{iF_\text{NL}}{Mn_0} \right] = 0,
+\end{equation*}
+which we will rearrange to obtain
+\begin{equation*}
+	\left(\omega^2 + i\nu\omega - k^2v_s^2 \right)n_1 = \dfrac{ikF_\text{NL}}{M}.
+\end{equation*}
+To determine the damping rate of the undriven wave we will take \(F_\text{NL} = 0\), and note that this updates our equation to
+\begin{equation*}
+	\omega^2\left(1 + i\dfrac{\nu}{\omega} \right) = k^2v_s^2, \implies \omega = \dfrac{kv_s}{\sqrt{1 + i\dfrac{\nu}{\omega}}}.
+\end{equation*}
+If we expand our square root, we obtain
+\begin{equation*}
+	\omega \approx kv_s\left(1 - \dfrac{i\nu}{2\omega} \right) = kv_s - \dfrac{i}{2}\nu.
+\end{equation*}
+Here we have used the fact that \(kv_s = \omega \). We see now that our Landau damping factor is \(-\text{Im}(\omega) = \Gamma = \nu/2 \). Substituting this back into our previous equation (before we set \(F_\text{NL} = 0 \)), we have
+\begin{equation*}
+	\left(\omega^2 + 2i\Gamma\omega - k^2v_s^2 \right)n_1 = \dfrac{ikF_\text{NL}}{M},
+\end{equation*}
+which is our desired dispersion relation. 
+
+
+\section*{Problem 8-14 (96)}
+\label{sec:8-14}
+The energy of a photon emitted at the upper sideband is \(\hbar\omega_2 = \hbar\omega_0 + \hbar\omega_1 \), which --- since \(\hbar\omega_1 \) is positive --- is greater than the initial photon energy. Since the lower sideband corresponds to an energy of \(\hbar\omega_2 = \hbar\omega_0 - \hbar\omega_1 \), it is closer to the ground state and is more energetically desirable. 
+
+\section*{Problem 8-16 (97)}
+\label{sec:8-16}
+We can take the equation for bounce frequency (equation [8-89])
+\begin{equation*}
+	\omega^2_B \equiv \dfrac{ekE}{m},
+\end{equation*}
+and we need simply note that
+\begin{equation*}
+	E = \sqrt{2}\phi_{\text{rms}}\dfrac{2\pi}{\lambda} = 0.8886 \text{V/m}.
+\end{equation*}
+This gives
+\begin{equation*}
+	\omega_B \equiv \sqrt{\dfrac{1.602\times 10^{-19} (2\pi) 0.8886}{0.01 \times 9.109\times 10^{-31}}} = 99\text{kHz}.
+\end{equation*}
+Which seems quite low, although I'm not entirely sure where I've gone wrong. 
+
+\section*{Problem 8-21 (98)}
+\label{sec:8-21}
+The soliton amplitude is given by equation [8-154]
+\begin{equation*}
+	|u| = 4\sqrt{A}\text{sech}(\sqrt{\dfrac{2A}{3}}(x-Vt));
+\end{equation*}
+substituting this into equation [8-146]
+\begin{equation*}
+	\delta n = \dfrac{1}{2}|u|^2\left(\dfrac{V^2}{\epsilon^2} - 1\right)^{-1}
+\end{equation*}
+gives us an expression for the density depression,
+\begin{equation*}
+	\delta n = 4A\text{sech}^2\left[\sqrt{\dfrac{2A}{3}(x - At)} \right]\left(\dfrac{V^2}{\epsilon^2} - 1\right)^{-1}.
+\end{equation*}
+Using the hint that we may assume the sech\(^2\) factor has an average value of \(1/2\) we arrive at
+\begin{equation*}
+	\overline{\delta n} = 2A\left(\dfrac{V^2}{\epsilon^2} - 1\right)^{-1}.
+\end{equation*}
+If we take \(V \ll \epsilon \) we get
+\begin{equation*}
+	\overline{\delta n} \approx -2A.
+\end{equation*}
+From the definition of \(\omega_p \) we can say that the average change in the plasma frequency is
+\begin{equation*}
+	\dfrac{\delta \omega_p}{\omega} = \dfrac{1}{2}\dfrac{\delta n}{n}  = -\dfrac{1}{2} (2A) = -A.
+\end{equation*}
+Therefore the frequency shift is reasonable. 
+
+\section*{Problem 8-23 (99)}
+\label{sec:8-23}
+Using the definition of the group velocity, as well as the fact that this velocity is independent of density we can say that the largest difference in wavenumber between the waves inside and outside the cavity is
+\begin{equation*}
+	k^2 = \dfrac{\omega^2{p,out} - \omega^2_{p_in}}{3v^2} = 1.21\times 10^{7}\text{m}^{-2}.
+\end{equation*}
+This implies that the shortest wavelength electron plasma that can be contained within the cavity is
+\begin{equation*}
+	\lambda = 1.81\text{mm}.
+\end{equation*}
+
+
